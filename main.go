@@ -27,7 +27,7 @@ var (
 func init() {
 	log.SetFlags(log.Ldate | log.Lshortfile | log.Lmicroseconds)
 	log.SetOutput(io.MultiWriter(os.Stdout, &lumberjack.Logger{
-		Filename:   "sms.log",
+		Filename:   "edp-fss.log",
 		MaxSize:    500, // megabytes
 		MaxBackups: 50,
 		MaxAge:     90, //days

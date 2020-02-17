@@ -26,12 +26,12 @@ const (
 	ERR_CODE_TOOBUSY = "6010"
 	ERR_CODE_PDFERR  = "4040"
 
-	STATUS_DISABLED = "b"
-	STATUS_ENABLED  = "e"
-	STATUS_SUCC     = "s"
-	STATUS_INIT     = "i"
-	STATUS_FAIL     = "f"
-	STATUS_DOING    = "d"
+	STATUS_DISABLED = "B"
+	STATUS_ENABLED  = "E"
+	STATUS_SUCC     = "S"
+	STATUS_INIT     = "I"
+	STATUS_FAIL     = "F"
+	STATUS_DOING    = "D"
 
 	DEFAULT_PATH      = "/tmp/pdfile/"
 	DEFAULT_FONT_SIZE = 14

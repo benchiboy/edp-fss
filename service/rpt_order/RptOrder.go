@@ -937,7 +937,7 @@ func (r RptOrderList) UpdateMap(keyNo string, m map[string]interface{}, tr *sql.
 	}
 	valSlice = append(valSlice, keyNo)
 	colNames = strings.TrimRight(colNames, ",")
-	updateSql := fmt.Sprintf("Update rpt_order set %s where id=?", colNames)
+	updateSql := fmt.Sprintf("Update rpt_order set %s where rpt_no=?", colNames)
 	if r.Level == DEBUG {
 		log.Println(SQL_UPDATE, updateSql)
 	}

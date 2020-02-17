@@ -176,7 +176,7 @@ func initPdf(pdf *gofpdf.Fpdf) {
 	common.PrintTail("initPdf")
 }
 
-func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap map[string][][]CellData, chartMap map[string]ChartData) error {
+func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap map[string][][]CellData, chartMap map[string]ChartData) (error, string) {
 	common.PrintHead("CrtPdfByTmpl")
 	pdf := gofpdf.New("P", "mm", "A4", "")
 	pdf.AddUTF8Font(FontName, "", "./NotoSansSC-Regular.ttf")
@@ -209,10 +209,10 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 	}
 
 	drawFooter(pdf, pdfTmpl.FooterSize, pdfTmpl.Footer)
-
-	err := pdf.OutputFileAndClose(common.DEFAULT_PATH + fmt.Sprintf("pdf_%d.pdf", 123))
+	pdfName := common.DEFAULT_PATH + fmt.Sprintf("pdf_%d.pdf", 123)
+	err := pdf.OutputFileAndClose(pdfName)
 	log.Println(err)
-	return nil
+	return nil, pdfName
 }
 
 /*
@@ -590,29 +590,43 @@ func CrtRptFile(w http.ResponseWriter, req *http.Request) {
 	var search rptorder.Search
 	search.AppNo = crtReq.AppNo
 	search.RptNo = crtReq.AppReqNo
-
+	var e rptorder.RptOrder
 	if u, err := r.Get(search); err != nil {
-		var e rptorder.RptOrder
 		e.AppNo = crtReq.AppNo
 		e.AppReqNo = crtReq.AppReqNo
 		e.RptNo = fmt.Sprintf("A%d", time.Now().UnixNano())
 		e.TmplNo = crtReq.TmplNo
+		buf, _ := json.Marshal(crtReq.BaseMap)
+		e.BaseInfo = string(buf)
+		buf, _ = json.Marshal(crtReq.TableMap)
+		e.TableInfo = string(buf)
+		buf, _ = json.Marshal(crtReq.ChartMap)
+		e.ChartInfo = string(buf)
+		e.Status = common.STATUS_INIT
 		e.InsertDate = time.Now().Unix()
 		e.Version = 1
 		r.InsertEntity(e, nil)
 
 	} else {
+
 		crtResp.ErrCode = u.ErrCode
 		crtResp.ErrCode = u.ErrMsg
+		common.Write_Response(crtResp, w, req)
+		return
 	}
-
-	if err = CrtPdfByTmpl(pdfTmpl, crtReq.BaseMap, crtReq.TableMap, crtReq.ChartMap); err != nil {
+	var pdfName string
+	if err, pdfName = CrtPdfByTmpl(pdfTmpl, crtReq.BaseMap, crtReq.TableMap, crtReq.ChartMap); err != nil {
 		log.Println("Parser Template  Error:", err)
 		crtResp.ErrCode = common.ERR_CODE_PDFERR
 		crtResp.ErrMsg = common.ERROR_MAP[common.ERR_CODE_PDFERR]
 		common.Write_Response(crtResp, w, req)
 		return
 	}
+	tmpMap := map[string]interface{}{"err_code": common.ERR_CODE_SUCCESS,
+		"err_msg":  common.ERROR_MAP[common.ERR_CODE_SUCCESS],
+		"file_url": pdfName}
+
+	r.UpdateMap(e.RptNo, tmpMap, nil)
 	crtResp.ErrCode = common.ERR_CODE_SUCCESS
 	crtResp.ErrCode = common.ERROR_MAP[common.ERR_CODE_SUCCESS]
 	common.Write_Response(crtResp, w, req)
@@ -640,7 +654,6 @@ func QryRptFile(w http.ResponseWriter, req *http.Request) {
 	var search rptorder.Search
 	search.RptNo = qryReq.RptNo
 	search.AppNo = qryReq.AppNo
-
 	if u, err := r.Get(search); err != nil {
 		w.WriteHeader(http.StatusForbidden)
 	} else {
