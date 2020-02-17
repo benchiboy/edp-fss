@@ -33,10 +33,10 @@ type Chapter_Define struct {
 	Content     string  `json:"content"`
 	ContentSize float64 `json:"content_size"`
 
-	Table          string  `json:"table"`
-	TableCols      string  `json:"table_cols"`
-	TableTitleSize float64 `json:"table_title_size"`
-	TableDataSize  float64 `json:"table_data_size"`
+	Table          string    `json:"table"`
+	TableCols      []float64 `json:"table_cols"`
+	TableTitleSize float64   `json:"table_title_size"`
+	TableDataSize  float64   `json:"table_data_size"`
 
 	Chart          string  `json:"chart"`
 	ChartTitleSize float64 `json:"chart_title_size"`
@@ -183,18 +183,26 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 	initPdf(pdf)
 	pdf.AddPage()
 
-	fmt.Println("Template====>", pdfTmpl)
-	drawTitle(pdf, pdfTmpl.TitleSize, pdfTmpl.Title)
+	if err, titleMsg := parserTmpl("FIX001", pdfTmpl.Title, baseMap); err != nil {
+	} else {
+		drawTitle(pdf, pdfTmpl.TitleSize, titleMsg)
+	}
 
-	drawText(pdf, pdfTmpl.PrefaceSize, pdfTmpl.Preface)
+	if err, titleMsg := parserTmpl("FIX001", pdfTmpl.Preface, baseMap); err != nil {
+	} else {
+		drawText(pdf, pdfTmpl.PrefaceSize, titleMsg)
+	}
 
 	for _, v := range pdfTmpl.Chapters {
 
 		drawChapter(pdf, v.TitleSize, v.Title)
-		drawText(pdf, v.ContentSize, v.Content)
-		if v.Table != common.EMPTY_STRING {
 
+		drawText(pdf, v.ContentSize, v.Content)
+
+		if v.Table != common.EMPTY_STRING {
+			drawDTable(pdf, v.TableTitleSize, v.TableDataSize, tableMap[v.Table])
 		}
+
 		if v.Chart != common.EMPTY_STRING {
 
 		}
@@ -207,8 +215,11 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 	return nil
 }
 
-func drawDataTable(pdf *gofpdf.Fpdf, tableData [][]CellData) {
-	w := []float64{50, 35, 40}
+/*
+	在PDF画二维表格
+*/
+func drawDTable(pdf *gofpdf.Fpdf, titleSize float64, dataSize float64, tableData [][]CellData) {
+	w := []float64{30, 30, 40, 40, 50}
 	fill := false
 	for i, v := range tableData {
 		if i == 0 {
@@ -216,14 +227,14 @@ func drawDataTable(pdf *gofpdf.Fpdf, tableData [][]CellData) {
 			pdf.SetTextColor(255, 255, 255)
 			pdf.SetDrawColor(128, 0, 0)
 			pdf.SetLineWidth(.2)
-			pdf.SetFont(FontName, "", 12)
+			pdf.SetFont(FontName, "", titleSize)
 			for j, vv := range v {
 				pdf.CellFormat(w[j], 12, vv.Desc, "1", 0, "C", true, 0, "")
 			}
 			pdf.Ln(-1)
 			pdf.SetFillColor(224, 235, 255)
 			pdf.SetTextColor(0, 0, 0)
-			pdf.SetFont(FontName, "", 9)
+			pdf.SetFont(FontName, "", dataSize)
 			for j, vv := range v {
 				pdf.CellFormat(w[j], 10, vv.Value, "1", 0, "L", true, 0, "")
 			}
@@ -231,19 +242,20 @@ func drawDataTable(pdf *gofpdf.Fpdf, tableData [][]CellData) {
 			pdf.Ln(-1)
 			pdf.SetFillColor(224, 235, 255)
 			pdf.SetTextColor(0, 0, 0)
-			pdf.SetFont(FontName, "", 9)
+			pdf.SetFont(FontName, "", dataSize)
 			for j, vv := range v {
 				pdf.CellFormat(w[j], 10, vv.Value, "1", 0, "L", fill, 0, "")
 			}
 			fill = !fill
 		}
 	}
+	pdf.Ln(-1)
 }
 
 /*
   根据基础MAP，画静态TABLE
 */
-func drawStaticTable(pdf *gofpdf.Fpdf, lableName []string, baseInfo map[string]string) {
+func drawSTable(pdf *gofpdf.Fpdf, lableName []string, baseInfo map[string]string) {
 	w := []float64{20, 30, 20, 30, 20, 30, 20, 20}
 	fill := true
 	index := 0

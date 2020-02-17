@@ -950,3 +950,154 @@ created by net/http.(*Server).Serve
 2020/02/17 19:05:26.978054 Common.go:101: 《======== [initPdf]
 2020/02/17 19:05:26.989304 Rpt.go:191: <nil>
 2020/02/17 19:05:26.989417 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 19:55:45.543784 main.go:37: config file == config-ci.json
+2020/02/17 19:55:45.555378 dbcomm.go:29: Database Connected successful!
+2020/02/17 19:55:45.555541 main.go:54: Listen Service start...
+2020/02/17 19:55:45.555596 main.go:63: listen:
+2020/02/17 19:55:49.407385 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 19:55:49.407882 Common.go:97: ========》 [qryTmpl]
+2020/02/17 19:55:49.407985 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 19:55:49.425555 RptTmpl.go:287: Elapsed===> {0xc0001220c0 1 0 []}
+2020/02/17 19:55:49.425770 RptTmpl.go:289: Elapsed===> 17.800908ms
+2020/02/17 19:55:49.426119 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 19:55:49.456155 Common.go:97: ========》 [initPdf]
+2020/02/17 19:55:49.456246 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 19:55:49.456278 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 19:55:49.456294 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 19:55:49.456309 Common.go:101: 《======== [initPdf]
+2020/02/17 19:55:49.473145 Rpt.go:205: <nil>
+2020/02/17 19:55:49.473256 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 19:57:52.347507 main.go:37: config file == config-ci.json
+2020/02/17 19:57:52.362580 dbcomm.go:29: Database Connected successful!
+2020/02/17 19:57:52.362736 main.go:54: Listen Service start...
+2020/02/17 19:57:52.362814 main.go:63: listen:
+2020/02/17 19:58:01.021813 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 19:58:01.022367 Common.go:97: ========》 [qryTmpl]
+2020/02/17 19:58:01.022503 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 19:58:01.043148 RptTmpl.go:287: Elapsed===> {0xc0001120c0 1 0 []}
+2020/02/17 19:58:01.043259 RptTmpl.go:289: Elapsed===> 20.782404ms
+2020/02/17 19:58:01.043638 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 19:58:01.066384 Common.go:97: ========》 [initPdf]
+2020/02/17 19:58:01.066511 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 19:58:01.066532 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 19:58:01.066554 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 19:58:01.066568 Common.go:101: 《======== [initPdf]
+2020/02/17 19:58:01.078677 Rpt.go:205: <nil>
+2020/02/17 19:58:01.078818 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 19:58:49.882768 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 19:58:49.893206 Common.go:97: ========》 [qryTmpl]
+2020/02/17 19:58:49.895823 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 19:58:49.920703 RptTmpl.go:287: Elapsed===> {0xc0001120c0 1 0 []}
+2020/02/17 19:58:49.920812 RptTmpl.go:289: Elapsed===> 25.022199ms
+2020/02/17 19:58:49.921031 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 19:58:49.948069 Common.go:97: ========》 [initPdf]
+2020/02/17 19:58:49.948127 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 19:58:49.948158 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 19:58:49.948193 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 19:58:49.948215 Common.go:101: 《======== [initPdf]
+2020/02/17 19:58:49.967926 Rpt.go:205: <nil>
+2020/02/17 19:58:49.967995 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 19:59:39.810589 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 19:59:39.811634 Common.go:97: ========》 [qryTmpl]
+2020/02/17 19:59:39.811852 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 19:59:39.838825 RptTmpl.go:287: Elapsed===> {0xc0001120c0 1 0 []}
+2020/02/17 19:59:39.838888 RptTmpl.go:289: Elapsed===> 27.04678ms
+2020/02/17 19:59:39.839030 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 19:59:39.863163 Common.go:97: ========》 [initPdf]
+2020/02/17 19:59:39.863733 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 19:59:39.863764 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 19:59:39.863784 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 19:59:39.863806 Common.go:101: 《======== [initPdf]
+2020/02/17 19:59:39.884589 Rpt.go:205: <nil>
+2020/02/17 19:59:39.884652 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 20:13:12.162253 main.go:37: config file == config-ci.json
+2020/02/17 20:13:12.178935 dbcomm.go:29: Database Connected successful!
+2020/02/17 20:13:12.179058 main.go:54: Listen Service start...
+2020/02/17 20:13:12.179122 main.go:63: listen:
+2020/02/17 20:13:14.944163 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 20:13:14.944581 Common.go:97: ========》 [qryTmpl]
+2020/02/17 20:13:14.944655 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 20:13:14.951307 RptTmpl.go:287: Elapsed===> {0xc000174000 1 0 []}
+2020/02/17 20:13:14.951440 RptTmpl.go:289: Elapsed===> 6.788927ms
+2020/02/17 20:13:14.951778 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 20:13:14.971400 Common.go:97: ========》 [initPdf]
+2020/02/17 20:13:14.971504 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 20:13:14.971540 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 20:13:14.971561 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 20:13:14.971580 Common.go:101: 《======== [initPdf]
+2020/02/17 20:13:14.971617 Common.go:97: ========》 [parserTmpl]
+2020/02/17 20:13:14.971753 Common.go:101: 《======== [parserTmpl]
+2020/02/17 20:13:14.989097 Rpt.go:211: <nil>
+2020/02/17 20:13:14.989240 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 20:13:54.444941 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 20:13:54.452652 Common.go:97: ========》 [qryTmpl]
+2020/02/17 20:13:54.452750 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 20:13:54.466115 RptTmpl.go:287: Elapsed===> {0xc000174000 1 0 []}
+2020/02/17 20:13:54.466230 RptTmpl.go:289: Elapsed===> 13.488065ms
+2020/02/17 20:13:54.466408 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 20:13:54.486332 Common.go:97: ========》 [initPdf]
+2020/02/17 20:13:54.486424 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 20:13:54.486456 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 20:13:54.486480 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 20:13:54.486501 Common.go:101: 《======== [initPdf]
+2020/02/17 20:13:54.486535 Common.go:97: ========》 [parserTmpl]
+2020/02/17 20:13:54.486762 Common.go:101: 《======== [parserTmpl]
+2020/02/17 20:13:54.512038 Rpt.go:211: <nil>
+2020/02/17 20:13:54.512174 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 20:14:33.049699 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 20:14:33.050644 Common.go:97: ========》 [qryTmpl]
+2020/02/17 20:14:33.050744 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 20:14:33.074166 RptTmpl.go:287: Elapsed===> {0xc000174000 1 0 []}
+2020/02/17 20:14:33.074335 RptTmpl.go:289: Elapsed===> 23.597644ms
+2020/02/17 20:14:33.074483 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 20:14:33.096988 Common.go:97: ========》 [initPdf]
+2020/02/17 20:14:33.097080 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 20:14:33.097109 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 20:14:33.097126 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 20:14:33.097142 Common.go:101: 《======== [initPdf]
+2020/02/17 20:14:33.097168 Common.go:97: ========》 [parserTmpl]
+2020/02/17 20:14:33.097264 Common.go:101: 《======== [parserTmpl]
+2020/02/17 20:14:33.121150 Rpt.go:211: <nil>
+2020/02/17 20:14:33.121283 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 20:16:12.230507 main.go:37: config file == config-ci.json
+2020/02/17 20:16:12.240877 dbcomm.go:29: Database Connected successful!
+2020/02/17 20:16:12.240957 main.go:54: Listen Service start...
+2020/02/17 20:16:12.241009 main.go:63: listen:
+2020/02/17 20:16:15.140709 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 20:16:15.141274 Common.go:97: ========》 [qryTmpl]
+2020/02/17 20:16:15.141362 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 20:16:15.161400 RptTmpl.go:287: Elapsed===> {0xc000164000 1 0 []}
+2020/02/17 20:16:15.161564 RptTmpl.go:289: Elapsed===> 20.185591ms
+2020/02/17 20:16:15.161919 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 20:16:15.189146 Common.go:97: ========》 [initPdf]
+2020/02/17 20:16:15.189208 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 20:16:15.189222 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 20:16:15.189275 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 20:16:15.189293 Common.go:101: 《======== [initPdf]
+2020/02/17 20:16:15.189321 Common.go:97: ========》 [parserTmpl]
+2020/02/17 20:16:15.189432 Common.go:101: 《======== [parserTmpl]
+2020/02/17 20:16:15.189493 Common.go:97: ========》 [parserTmpl]
+2020/02/17 20:16:15.189550 Common.go:101: 《======== [parserTmpl]
+2020/02/17 20:16:15.202328 Rpt.go:214: <nil>
+2020/02/17 20:16:15.202465 Common.go:101: 《======== [CrtRptFile]
+2020/02/17 20:16:53.445022 main.go:37: config file == config-ci.json
+2020/02/17 20:16:53.457852 dbcomm.go:29: Database Connected successful!
+2020/02/17 20:16:53.457984 main.go:54: Listen Service start...
+2020/02/17 20:16:53.458037 main.go:63: listen:
+2020/02/17 20:16:56.623796 Common.go:97: ========》 [CrtRptFile]
+2020/02/17 20:16:56.624337 Common.go:97: ========》 [qryTmpl]
+2020/02/17 20:16:56.624432 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='e' 
+2020/02/17 20:16:56.643261 RptTmpl.go:287: Elapsed===> {0xc000186000 1 0 []}
+2020/02/17 20:16:56.643378 RptTmpl.go:289: Elapsed===> 18.96507ms
+2020/02/17 20:16:56.643712 Common.go:97: ========》 [CrtPdfByTmpl]
+2020/02/17 20:16:56.668081 Common.go:97: ========》 [initPdf]
+2020/02/17 20:16:56.668167 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/17 20:16:56.668195 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/17 20:16:56.668211 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/17 20:16:56.668225 Common.go:101: 《======== [initPdf]
+2020/02/17 20:16:56.668253 Common.go:97: ========》 [parserTmpl]
+2020/02/17 20:16:56.668381 Common.go:101: 《======== [parserTmpl]
+2020/02/17 20:16:56.668446 Common.go:97: ========》 [parserTmpl]
+2020/02/17 20:16:56.668600 Common.go:101: 《======== [parserTmpl]
+2020/02/17 20:16:56.688162 Rpt.go:214: <nil>
+2020/02/17 20:16:56.694000 Common.go:101: 《======== [CrtRptFile]
