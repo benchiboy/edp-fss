@@ -33,7 +33,8 @@ const (
 	STATUS_FAIL     = "f"
 	STATUS_DOING    = "d"
 
-	DEFAULT_PATH = "/tmp/pdfile/"
+	DEFAULT_PATH      = "/tmp/pdfile/"
+	DEFAULT_FONT_SIZE = 14
 
 	FIELD_LOGIN_PASS  = "user_pwd"
 	FIELD_ERRORS      = "pwderr_cnt"

@@ -200,7 +200,7 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 		drawText(pdf, v.ContentSize, v.Content)
 
 		if v.Table != common.EMPTY_STRING {
-			drawDTable(pdf, v.TableTitleSize, v.TableDataSize, tableMap[v.Table])
+			drawDTable(pdf, v.TableCols, v.TableTitleSize, v.TableDataSize, tableMap[v.Table])
 		}
 
 		if v.Chart != common.EMPTY_STRING {
@@ -218,8 +218,24 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 /*
 	在PDF画二维表格
 */
-func drawDTable(pdf *gofpdf.Fpdf, titleSize float64, dataSize float64, tableData [][]CellData) {
-	w := []float64{30, 30, 40, 40, 50}
+func drawDTable(pdf *gofpdf.Fpdf, colLens []float64, titleSize float64, dataSize float64, tableData [][]CellData) error {
+	if titleSize == 0 {
+		titleSize = common.DEFAULT_FONT_SIZE
+	}
+	if dataSize == 0 {
+		titleSize = common.DEFAULT_FONT_SIZE
+	}
+	w := colLens
+	var totalLen float64
+	for _, v := range w {
+		totalLen += v
+	}
+	if totalLen == 0 {
+		return fmt.Errorf("表格合计长度不能为%d", totalLen)
+	}
+	if totalLen > pageWidth {
+		return fmt.Errorf("表格合计长度%d长度大于pageWidth", totalLen)
+	}
 	fill := false
 	for i, v := range tableData {
 		if i == 0 {
@@ -250,6 +266,7 @@ func drawDTable(pdf *gofpdf.Fpdf, titleSize float64, dataSize float64, tableData
 		}
 	}
 	pdf.Ln(-1)
+	return nil
 }
 
 /*
@@ -288,8 +305,8 @@ func drawSTable(pdf *gofpdf.Fpdf, lableName []string, baseInfo map[string]string
 	pdf.Ln(-1)
 }
 
-func drawLogo(pdf *gofpdf.Fpdf) {
-	pdf.Image("./bd.png", 180, -10, 10, 10, true, "", 0, "http://www.fpdf.org")
+func drawLogo(pdf *gofpdf.Fpdf, imgFile string) {
+	pdf.Image(imgFile, 180, -10, 10, 10, true, "", 0, "http://www.crfchina.com")
 }
 
 var nameItems = []string{"衬衫", "牛仔裤", "运动裤", "袜子", "冲锋衣", "羊毛衫"}
@@ -354,6 +371,9 @@ func drawChart(pdf *gofpdf.Fpdf) {
 }
 
 func drawChapter(pdf *gofpdf.Fpdf, fontSize float64, text string) {
+	if fontSize == 0 {
+		fontSize = common.DEFAULT_FONT_SIZE
+	}
 	pdf.Ln(2)
 	pdf.SetFont(FontName, "", fontSize)
 	_, lineHt := pdf.GetFontSize()
@@ -385,6 +405,9 @@ func drawHeader(pdf *gofpdf.Fpdf, fontSize float64, text string) {
 }
 
 func drawFooter(pdf *gofpdf.Fpdf, fontSize float64, text string) {
+	if fontSize == 0 {
+		fontSize = common.DEFAULT_FONT_SIZE
+	}
 	pdf.SetFooterFunc(func() {
 		pdf.SetY(-10)
 		pdf.SetFont(FontName, "", fontSize)
@@ -395,6 +418,9 @@ func drawFooter(pdf *gofpdf.Fpdf, fontSize float64, text string) {
 }
 
 func drawTitle(pdf *gofpdf.Fpdf, fontSize float64, text string) {
+	if fontSize == 0 {
+		fontSize = common.DEFAULT_FONT_SIZE
+	}
 	pdf.SetFont(FontName, "", fontSize)
 	_, lineHt := pdf.GetFontSize()
 	pdf.WriteAligned(pageWidth, lineHt, text, "C")
@@ -405,6 +431,9 @@ func drawTitle(pdf *gofpdf.Fpdf, fontSize float64, text string) {
 	显示文本信息
 */
 func drawText(pdf *gofpdf.Fpdf, fontSize float64, text string) {
+	if fontSize == 0 {
+		fontSize = common.DEFAULT_FONT_SIZE
+	}
 	pdf.SetFont(FontName, "", fontSize)
 	_, lineHt := pdf.GetFontSize()
 	pdf.SetTextColor(0, 0, 0)
@@ -556,6 +585,27 @@ func CrtRptFile(w http.ResponseWriter, req *http.Request) {
 		common.Write_Response(crtResp, w, req)
 		return
 	}
+
+	r := rptorder.New(dbcomm.GetDB(), rptorder.DEBUG)
+	var search rptorder.Search
+	search.AppNo = crtReq.AppNo
+	search.RptNo = crtReq.AppReqNo
+
+	if u, err := r.Get(search); err != nil {
+		var e rptorder.RptOrder
+		e.AppNo = crtReq.AppNo
+		e.AppReqNo = crtReq.AppReqNo
+		e.RptNo = fmt.Sprintf("A%d", time.Now().UnixNano())
+		e.TmplNo = crtReq.TmplNo
+		e.InsertDate = time.Now().Unix()
+		e.Version = 1
+		r.InsertEntity(e, nil)
+
+	} else {
+		crtResp.ErrCode = u.ErrCode
+		crtResp.ErrCode = u.ErrMsg
+	}
+
 	if err = CrtPdfByTmpl(pdfTmpl, crtReq.BaseMap, crtReq.TableMap, crtReq.ChartMap); err != nil {
 		log.Println("Parser Template  Error:", err)
 		crtResp.ErrCode = common.ERR_CODE_PDFERR
