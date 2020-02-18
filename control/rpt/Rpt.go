@@ -514,6 +514,7 @@ func qryApp(appNo string) (string, string) {
 	r := rptapp.New(dbcomm.GetDB(), rptapp.DEBUG)
 	var search rptapp.Search
 	search.AppNo = appNo
+	search.Status = common.STATUS_ENABLED
 	if u, err := r.Get(search); err != nil {
 		return common.ERR_CODE_NOTFIND, common.EMPTY_STRING
 	} else {
@@ -537,7 +538,14 @@ func QryAgrt(w http.ResponseWriter, req *http.Request) {
 	}
 	defer req.Body.Close()
 
-	var tmplMsg, errCode string
+	var errCode string
+	if errCode, _ = qryApp(qryReq.AppNo); errCode != common.ERR_CODE_SUCCESS {
+		log.Println("Query AppNo  Error:", errCode)
+		w.WriteHeader(http.StatusForbidden)
+		return
+	}
+
+	var tmplMsg string
 	if errCode, tmplMsg = qryTmpl(qryReq.TmplNo); errCode != common.ERR_CODE_SUCCESS {
 		log.Println("Query Template  Error:", errCode)
 		w.WriteHeader(http.StatusInternalServerError)
@@ -569,11 +577,21 @@ func CrtRptFile(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	defer req.Body.Close()
-	var tmplMsg, errCode string
+
+	var errCode string
+	if errCode, _ = qryApp(crtReq.AppNo); errCode != common.ERR_CODE_SUCCESS {
+		log.Println("Query AppNo  Error:", errCode)
+		crtResp.ErrCode = common.ERR_CODE_NOTFIND
+		crtResp.ErrMsg = crtReq.AppNo + common.ERROR_MAP[common.ERR_CODE_NOTFIND]
+		common.Write_Response(crtResp, w, req)
+		return
+	}
+
+	var tmplMsg string
 	if errCode, tmplMsg = qryTmpl(crtReq.TmplNo); errCode != common.ERR_CODE_SUCCESS {
 		log.Println("Query Template  Error:", errCode)
 		crtResp.ErrCode = common.ERR_CODE_NOTFIND
-		crtResp.ErrCode = common.ERROR_MAP[common.ERR_CODE_NOTFIND]
+		crtResp.ErrMsg = common.ERROR_MAP[common.ERR_CODE_NOTFIND]
 		common.Write_Response(crtResp, w, req)
 		return
 	}
@@ -650,6 +668,13 @@ func QryRptFile(w http.ResponseWriter, req *http.Request) {
 	}
 	defer req.Body.Close()
 
+	var errCode string
+	if errCode, _ = qryApp(qryReq.AppNo); errCode != common.ERR_CODE_SUCCESS {
+		log.Println("Query AppNo  Error:", errCode)
+		w.WriteHeader(http.StatusForbidden)
+		return
+	}
+
 	r := rptorder.New(dbcomm.GetDB(), rptorder.DEBUG)
 	var search rptorder.Search
 	search.RptNo = qryReq.RptNo
@@ -686,6 +711,15 @@ func QryRptStatus(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	defer req.Body.Close()
+
+	var errCode string
+	if errCode, _ = qryApp(qryReq.AppNo); errCode != common.ERR_CODE_SUCCESS {
+		log.Println("Query AppNo  Error:", errCode)
+		qryResp.ErrCode = common.ERR_CODE_NOTFIND
+		qryResp.ErrMsg = qryReq.AppNo + common.ERROR_MAP[common.ERR_CODE_NOTFIND]
+		common.Write_Response(qryResp, w, req)
+		return
+	}
 
 	r := rptorder.New(dbcomm.GetDB(), rptorder.DEBUG)
 	var search rptorder.Search
