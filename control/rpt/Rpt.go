@@ -530,13 +530,34 @@ func qryApp(appNo string) (string, string) {
 func QryAgrt(w http.ResponseWriter, req *http.Request) {
 	common.PrintHead("QryAgrt")
 	var qryReq QryAgrtReq
-	err := json.NewDecoder(req.Body).Decode(&qryReq)
-	if err != nil {
-		log.Println("NewDecoder Json Error:", err)
-		w.WriteHeader(http.StatusForbidden)
-		return
+
+	if req.Method == "GET" {
+		appNo, ok := req.URL.Query()["app_no"]
+		if !ok || len(appNo) < 1 || appNo[0] == "" {
+			log.Println("URL.Query Json Error:")
+			w.WriteHeader(http.StatusForbidden)
+			return
+
+		}
+		qryReq.AppNo = appNo[0]
+
+		tmplNo, ok := req.URL.Query()["tmpl_no"]
+		if !ok || len(appNo) < 1 || appNo[0] == "" {
+			log.Println("URL.Query Json Error:")
+			w.WriteHeader(http.StatusForbidden)
+			return
+
+		}
+		qryReq.TmplNo = tmplNo[0]
+	} else {
+		err := json.NewDecoder(req.Body).Decode(&qryReq)
+		if err != nil {
+			log.Println("NewDecoder Json Error:", err)
+			w.WriteHeader(http.StatusForbidden)
+			return
+		}
+		defer req.Body.Close()
 	}
-	defer req.Body.Close()
 
 	var errCode string
 	if errCode, _ = qryApp(qryReq.AppNo); errCode != common.ERR_CODE_SUCCESS {
@@ -550,7 +571,7 @@ func QryAgrt(w http.ResponseWriter, req *http.Request) {
 		log.Println("Query Template  Error:", errCode)
 		w.WriteHeader(http.StatusInternalServerError)
 	}
-	err, tmplMsg = parserTmpl(qryReq.TmplNo, tmplMsg, qryReq.BaseMap)
+	err, tmplMsg := parserTmpl(qryReq.TmplNo, tmplMsg, qryReq.BaseMap)
 	if err != nil {
 		log.Println("Parser Template  Error:", err)
 		w.WriteHeader(http.StatusInternalServerError)
@@ -660,13 +681,32 @@ func CrtRptFile(w http.ResponseWriter, req *http.Request) {
 func QryRptFile(w http.ResponseWriter, req *http.Request) {
 	common.PrintHead("QryRptFile")
 	var qryReq QryRptReq
-	err := json.NewDecoder(req.Body).Decode(&qryReq)
-	if err != nil {
-		log.Println("NewDecoder Json Error:", err)
-		w.WriteHeader(http.StatusForbidden)
-		return
+
+	if req.Method == "GET" {
+		appNo, ok := req.URL.Query()["app_no"]
+		if !ok || len(appNo) < 1 || appNo[0] == "" {
+			log.Println("URL.Query Json Error:")
+			w.WriteHeader(http.StatusForbidden)
+			return
+		}
+		qryReq.AppNo = appNo[0]
+		rptNo, ok := req.URL.Query()["rpt_no"]
+		if !ok || len(appNo) < 1 || appNo[0] == "" {
+			log.Println("URL.Query Json Error:")
+			w.WriteHeader(http.StatusForbidden)
+			return
+
+		}
+		qryReq.RptNo = rptNo[0]
+	} else {
+		err := json.NewDecoder(req.Body).Decode(&qryReq)
+		if err != nil {
+			log.Println("NewDecoder Json Error:", err)
+			w.WriteHeader(http.StatusForbidden)
+			return
+		}
+		defer req.Body.Close()
 	}
-	defer req.Body.Close()
 
 	var errCode string
 	if errCode, _ = qryApp(qryReq.AppNo); errCode != common.ERR_CODE_SUCCESS {
@@ -682,7 +722,7 @@ func QryRptFile(w http.ResponseWriter, req *http.Request) {
 	if u, err := r.Get(search); err != nil {
 		w.WriteHeader(http.StatusForbidden)
 	} else {
-		if buf, err := ioutil.ReadFile(common.DEFAULT_PATH + u.FileUrl); err != nil {
+		if buf, err := ioutil.ReadFile(u.FileUrl); err != nil {
 			log.Println("Open File Error:", err)
 			w.WriteHeader(http.StatusInternalServerError)
 			return
@@ -706,7 +746,7 @@ func QryRptStatus(w http.ResponseWriter, req *http.Request) {
 	err := json.NewDecoder(req.Body).Decode(&qryReq)
 	if err != nil {
 		qryResp.ErrCode = common.ERR_CODE_JSONERR
-		qryResp.ErrCode = common.ERROR_MAP[common.ERR_CODE_JSONERR]
+		qryResp.ErrMsg = common.ERROR_MAP[common.ERR_CODE_JSONERR]
 		common.Write_Response(qryResp, w, req)
 		return
 	}
@@ -732,7 +772,7 @@ func QryRptStatus(w http.ResponseWriter, req *http.Request) {
 	} else {
 		qryResp.Status = u.Status
 		qryResp.ErrCode = u.ErrCode
-		qryResp.ErrCode = u.ErrMsg
+		qryResp.ErrMsg = u.ErrMsg
 	}
 	qryResp.RptNo = qryReq.RptNo
 	common.Write_Response(qryResp, w, req)

@@ -6,10 +6,12 @@ import (
 	"log"
 	"strings"
 	"time"
+	
+	
 )
 
 const (
-	SQL_NEWDB   = "NewDB  ===>"
+	SQL_NEWDB	= "NewDB  ===>"
 	SQL_INSERT  = "Insert ===>"
 	SQL_UPDATE  = "Update ===>"
 	SQL_SELECT  = "Select ===>"
@@ -22,27 +24,23 @@ const (
 )
 
 type Search struct {
-	Id         int64  `json:"id"`
-	RptNo      string `json:"rpt_no"`
-	AppNo      string `json:"app_no"`
-	AppReqNo   string `json:"app_req_no"`
-	TmplNo     string `json:"tmpl_no"`
-	TmplVer    string `json:"tmpl_ver"`
-	Status     string `json:"status"`
-	BaseInfo   string `json:"base_info"`
-	TableInfo  string `json:"table_info"`
-	ChartInfo  string `json:"chart_info"`
-	FileUrl    string `json:"file_url"`
-	RptUrl     string `json:"rpt_url"`
-	ErrCode    string `json:"err_code"`
-	ErrMsg     string `json:"err_msg"`
-	InsertDate int64  `json:"insert_date"`
-	UpdateDate int64  `json:"update_date"`
-	Version    int64  `json:"version"`
-	PageNo     int    `json:"page_no"`
-	PageSize   int    `json:"page_size"`
-	ExtraWhere string `json:"extra_where"`
-	SortFld    string `json:"sort_fld"`
+	
+	Id	int64	`json:"id"`
+	AppNo	string	`json:"app_no"`
+	AppName	string	`json:"app_name"`
+	AppKey	string	`json:"app_key"`
+	AppIp	string	`json:"app_ip"`
+	BackUrl	string	`json:"back_url"`
+	Status	string	`json:"status"`
+	StartDate	int64	`json:"start_date"`
+	ExpireDate	int64	`json:"expire_date"`
+	InsertDate	int64	`json:"insert_date"`
+	UdpateDate	int64	`json:"udpate_date"`
+	Version	int64	`json:"version"`
+	PageNo   int    `json:"page_no"`
+	PageSize int    `json:"page_size"`
+	ExtraWhere   string `json:"extra_where"`
+	SortFld  string `json:"sort_fld"`
 }
 
 type RptAppList struct {
@@ -53,27 +51,24 @@ type RptAppList struct {
 }
 
 type RptApp struct {
-	Id         int64  `json:"id"`
-	RptNo      string `json:"rpt_no"`
-	AppNo      string `json:"app_no"`
-	AppReqNo   string `json:"app_req_no"`
-	TmplNo     string `json:"tmpl_no"`
-	TmplVer    string `json:"tmpl_ver"`
-	Status     string `json:"status"`
-	BaseInfo   string `json:"base_info"`
-	TableInfo  string `json:"table_info"`
-	ChartInfo  string `json:"chart_info"`
-	FileUrl    string `json:"file_url"`
-	RptUrl     string `json:"rpt_url"`
-	ErrCode    string `json:"err_code"`
-	ErrMsg     string `json:"err_msg"`
-	InsertDate int64  `json:"insert_date"`
-	UpdateDate int64  `json:"update_date"`
-	Version    int64  `json:"version"`
+	
+	Id	int64	`json:"id"`
+	AppNo	string	`json:"app_no"`
+	AppName	string	`json:"app_name"`
+	AppKey	string	`json:"app_key"`
+	AppIp	string	`json:"app_ip"`
+	BackUrl	string	`json:"back_url"`
+	Status	string	`json:"status"`
+	StartDate	int64	`json:"start_date"`
+	ExpireDate	int64	`json:"expire_date"`
+	InsertDate	int64	`json:"insert_date"`
+	UdpateDate	int64	`json:"udpate_date"`
+	Version	int64	`json:"version"`
 }
 
+
 type Form struct {
-	Form RptApp `json:"RptApp"`
+	Form   RptApp `json:"RptApp"`
 }
 
 /*
@@ -83,8 +78,8 @@ type Form struct {
 */
 
 func New(db *sql.DB, level int) *RptAppList {
-	if db == nil {
-		log.Println(SQL_SELECT, "Database is nil")
+	if db==nil{
+		log.Println(SQL_SELECT,"Database is nil")
 		return nil
 	}
 	return &RptAppList{DB: db, Total: 0, RptApps: make([]RptApp, 0), Level: level}
@@ -100,11 +95,11 @@ func NewUrl(url string, level int) *RptAppList {
 	var err error
 	db, err := sql.Open("mysql", url)
 	if err != nil {
-		log.Println(SQL_SELECT, "Open database error:", err)
+		log.Println(SQL_SELECT,"Open database error:", err)
 		return nil
 	}
 	if err = db.Ping(); err != nil {
-		log.Println(SQL_SELECT, "Ping database error:", err)
+		log.Println(SQL_SELECT,"Ping database error:", err)
 		return nil
 	}
 	return &RptAppList{DB: db, Total: 0, RptApps: make([]RptApp, 0), Level: level}
@@ -119,80 +114,73 @@ func NewUrl(url string, level int) *RptAppList {
 func (r *RptAppList) GetTotal(s Search) (int, error) {
 	var where string
 	l := time.Now()
-
+	
+	
 	if s.Id != 0 {
 		where += " and id=" + fmt.Sprintf("%d", s.Id)
-	}
-
-	if s.RptNo != "" {
-		where += " and rpt_no='" + s.RptNo + "'"
-	}
-
+	}			
+	
+			
 	if s.AppNo != "" {
 		where += " and app_no='" + s.AppNo + "'"
-	}
-
-	if s.AppReqNo != "" {
-		where += " and app_req_no='" + s.AppReqNo + "'"
-	}
-
-	if s.TmplNo != "" {
-		where += " and tmpl_no='" + s.TmplNo + "'"
-	}
-
-	if s.TmplVer != "" {
-		where += " and tmpl_ver='" + s.TmplVer + "'"
-	}
-
+	}	
+	
+			
+	if s.AppName != "" {
+		where += " and app_name='" + s.AppName + "'"
+	}	
+	
+			
+	if s.AppKey != "" {
+		where += " and app_key='" + s.AppKey + "'"
+	}	
+	
+			
+	if s.AppIp != "" {
+		where += " and app_ip='" + s.AppIp + "'"
+	}	
+	
+			
+	if s.BackUrl != "" {
+		where += " and back_url='" + s.BackUrl + "'"
+	}	
+	
+			
 	if s.Status != "" {
 		where += " and status='" + s.Status + "'"
-	}
-
-	if s.BaseInfo != "" {
-		where += " and base_info='" + s.BaseInfo + "'"
-	}
-
-	if s.TableInfo != "" {
-		where += " and table_info='" + s.TableInfo + "'"
-	}
-
-	if s.ChartInfo != "" {
-		where += " and chart_info='" + s.ChartInfo + "'"
-	}
-
-	if s.FileUrl != "" {
-		where += " and file_url='" + s.FileUrl + "'"
-	}
-
-	if s.RptUrl != "" {
-		where += " and rpt_url='" + s.RptUrl + "'"
-	}
-
-	if s.ErrCode != "" {
-		where += " and err_code='" + s.ErrCode + "'"
-	}
-
-	if s.ErrMsg != "" {
-		where += " and err_msg='" + s.ErrMsg + "'"
-	}
-
+	}	
+	
+	
+	if s.StartDate != 0 {
+		where += " and start_date=" + fmt.Sprintf("%d", s.StartDate)
+	}			
+	
+	
+	if s.ExpireDate != 0 {
+		where += " and expire_date=" + fmt.Sprintf("%d", s.ExpireDate)
+	}			
+	
+	
 	if s.InsertDate != 0 {
 		where += " and insert_date=" + fmt.Sprintf("%d", s.InsertDate)
-	}
-
-	if s.UpdateDate != 0 {
-		where += " and update_date=" + fmt.Sprintf("%d", s.UpdateDate)
-	}
-
+	}			
+	
+	
+	if s.UdpateDate != 0 {
+		where += " and udpate_date=" + fmt.Sprintf("%d", s.UdpateDate)
+	}			
+	
+	
 	if s.Version != 0 {
 		where += " and version=" + fmt.Sprintf("%d", s.Version)
-	}
+	}			
+	
 
 	if s.ExtraWhere != "" {
 		where += s.ExtraWhere
 	}
 
-	qrySql := fmt.Sprintf("Select count(1) as total from rpt_order   where 1=1 %s", where)
+	qrySql := fmt.Sprintf("Select count(1) as total from rpt_app   where 1=1 %s", where)
 	if r.Level == DEBUG {
 		log.Println(SQL_SELECT, qrySql)
 	}
@@ -221,80 +209,73 @@ func (r *RptAppList) GetTotal(s Search) (int, error) {
 func (r RptAppList) Get(s Search) (*RptApp, error) {
 	var where string
 	l := time.Now()
-
+	
+	
 	if s.Id != 0 {
 		where += " and id=" + fmt.Sprintf("%d", s.Id)
-	}
-
-	if s.RptNo != "" {
-		where += " and rpt_no='" + s.RptNo + "'"
-	}
-
+	}			
+	
+			
 	if s.AppNo != "" {
 		where += " and app_no='" + s.AppNo + "'"
-	}
-
-	if s.AppReqNo != "" {
-		where += " and app_req_no='" + s.AppReqNo + "'"
-	}
-
-	if s.TmplNo != "" {
-		where += " and tmpl_no='" + s.TmplNo + "'"
-	}
-
-	if s.TmplVer != "" {
-		where += " and tmpl_ver='" + s.TmplVer + "'"
-	}
-
+	}	
+	
+			
+	if s.AppName != "" {
+		where += " and app_name='" + s.AppName + "'"
+	}	
+	
+			
+	if s.AppKey != "" {
+		where += " and app_key='" + s.AppKey + "'"
+	}	
+	
+			
+	if s.AppIp != "" {
+		where += " and app_ip='" + s.AppIp + "'"
+	}	
+	
+			
+	if s.BackUrl != "" {
+		where += " and back_url='" + s.BackUrl + "'"
+	}	
+	
+			
 	if s.Status != "" {
 		where += " and status='" + s.Status + "'"
-	}
-
-	if s.BaseInfo != "" {
-		where += " and base_info='" + s.BaseInfo + "'"
-	}
-
-	if s.TableInfo != "" {
-		where += " and table_info='" + s.TableInfo + "'"
-	}
-
-	if s.ChartInfo != "" {
-		where += " and chart_info='" + s.ChartInfo + "'"
-	}
-
-	if s.FileUrl != "" {
-		where += " and file_url='" + s.FileUrl + "'"
-	}
-
-	if s.RptUrl != "" {
-		where += " and rpt_url='" + s.RptUrl + "'"
-	}
-
-	if s.ErrCode != "" {
-		where += " and err_code='" + s.ErrCode + "'"
-	}
-
-	if s.ErrMsg != "" {
-		where += " and err_msg='" + s.ErrMsg + "'"
-	}
-
+	}	
+	
+	
+	if s.StartDate != 0 {
+		where += " and start_date=" + fmt.Sprintf("%d", s.StartDate)
+	}			
+	
+	
+	if s.ExpireDate != 0 {
+		where += " and expire_date=" + fmt.Sprintf("%d", s.ExpireDate)
+	}			
+	
+	
 	if s.InsertDate != 0 {
 		where += " and insert_date=" + fmt.Sprintf("%d", s.InsertDate)
-	}
-
-	if s.UpdateDate != 0 {
-		where += " and update_date=" + fmt.Sprintf("%d", s.UpdateDate)
-	}
-
+	}			
+	
+	
+	if s.UdpateDate != 0 {
+		where += " and udpate_date=" + fmt.Sprintf("%d", s.UdpateDate)
+	}			
+	
+	
 	if s.Version != 0 {
 		where += " and version=" + fmt.Sprintf("%d", s.Version)
-	}
+	}			
+	
 
 	if s.ExtraWhere != "" {
 		where += s.ExtraWhere
 	}
-
-	qrySql := fmt.Sprintf("Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1 %s ", where)
+	
+	qrySql := fmt.Sprintf("Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1 %s ", where)
 	if r.Level == DEBUG {
 		log.Println(SQL_SELECT, qrySql)
 	}
@@ -305,11 +286,11 @@ func (r RptAppList) Get(s Search) (*RptApp, error) {
 	}
 	defer rows.Close()
 
-	var p RptApp
+	var p  RptApp
 	if !rows.Next() {
 		return nil, fmt.Errorf("Not Finded Record")
 	} else {
-		err := rows.Scan(&p.Id, &p.RptNo, &p.AppNo, &p.AppReqNo, &p.TmplNo, &p.TmplVer, &p.Status, &p.BaseInfo, &p.TableInfo, &p.ChartInfo, &p.FileUrl, &p.RptUrl, &p.ErrCode, &p.ErrMsg, &p.InsertDate, &p.UpdateDate, &p.Version)
+		err:=rows.Scan(&p.Id,&p.AppNo,&p.AppName,&p.AppKey,&p.AppIp,&p.BackUrl,&p.Status,&p.StartDate,&p.ExpireDate,&p.InsertDate,&p.UdpateDate,&p.Version)
 		if err != nil {
 			log.Println(SQL_ERROR, err.Error())
 			return nil, err
@@ -331,84 +312,78 @@ func (r RptAppList) Get(s Search) (*RptApp, error) {
 func (r *RptAppList) GetList(s Search) ([]RptApp, error) {
 	var where string
 	l := time.Now()
-
+	
+	
+	
 	if s.Id != 0 {
 		where += " and id=" + fmt.Sprintf("%d", s.Id)
-	}
-
-	if s.RptNo != "" {
-		where += " and rpt_no='" + s.RptNo + "'"
-	}
-
+	}			
+	
+			
 	if s.AppNo != "" {
 		where += " and app_no='" + s.AppNo + "'"
-	}
-
-	if s.AppReqNo != "" {
-		where += " and app_req_no='" + s.AppReqNo + "'"
-	}
-
-	if s.TmplNo != "" {
-		where += " and tmpl_no='" + s.TmplNo + "'"
-	}
-
-	if s.TmplVer != "" {
-		where += " and tmpl_ver='" + s.TmplVer + "'"
-	}
-
+	}	
+	
+			
+	if s.AppName != "" {
+		where += " and app_name='" + s.AppName + "'"
+	}	
+	
+			
+	if s.AppKey != "" {
+		where += " and app_key='" + s.AppKey + "'"
+	}	
+	
+			
+	if s.AppIp != "" {
+		where += " and app_ip='" + s.AppIp + "'"
+	}	
+	
+			
+	if s.BackUrl != "" {
+		where += " and back_url='" + s.BackUrl + "'"
+	}	
+	
+			
 	if s.Status != "" {
 		where += " and status='" + s.Status + "'"
-	}
-
-	if s.BaseInfo != "" {
-		where += " and base_info='" + s.BaseInfo + "'"
-	}
-
-	if s.TableInfo != "" {
-		where += " and table_info='" + s.TableInfo + "'"
-	}
-
-	if s.ChartInfo != "" {
-		where += " and chart_info='" + s.ChartInfo + "'"
-	}
-
-	if s.FileUrl != "" {
-		where += " and file_url='" + s.FileUrl + "'"
-	}
-
-	if s.RptUrl != "" {
-		where += " and rpt_url='" + s.RptUrl + "'"
-	}
-
-	if s.ErrCode != "" {
-		where += " and err_code='" + s.ErrCode + "'"
-	}
-
-	if s.ErrMsg != "" {
-		where += " and err_msg='" + s.ErrMsg + "'"
-	}
-
+	}	
+	
+	
+	if s.StartDate != 0 {
+		where += " and start_date=" + fmt.Sprintf("%d", s.StartDate)
+	}			
+	
+	
+	if s.ExpireDate != 0 {
+		where += " and expire_date=" + fmt.Sprintf("%d", s.ExpireDate)
+	}			
+	
+	
 	if s.InsertDate != 0 {
 		where += " and insert_date=" + fmt.Sprintf("%d", s.InsertDate)
-	}
-
-	if s.UpdateDate != 0 {
-		where += " and update_date=" + fmt.Sprintf("%d", s.UpdateDate)
-	}
-
+	}			
+	
+	
+	if s.UdpateDate != 0 {
+		where += " and udpate_date=" + fmt.Sprintf("%d", s.UdpateDate)
+	}			
+	
+	
 	if s.Version != 0 {
 		where += " and version=" + fmt.Sprintf("%d", s.Version)
-	}
-
+	}			
+	
+	
 	if s.ExtraWhere != "" {
 		where += s.ExtraWhere
 	}
 
 	var qrySql string
-	if s.PageSize == 0 && s.PageNo == 0 {
-		qrySql = fmt.Sprintf("Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1 %s", where)
-	} else {
-		qrySql = fmt.Sprintf("Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1 %s Limit %d offset %d", where, s.PageSize, (s.PageNo-1)*s.PageSize)
+	if s.PageSize==0 &&s.PageNo==0{
+		qrySql = fmt.Sprintf("Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1 %s", where)
+	}else{
+		qrySql = fmt.Sprintf("Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1 %s Limit %d offset %d", where, s.PageSize, (s.PageNo-1)*s.PageSize)
 	}
 	if r.Level == DEBUG {
 		log.Println(SQL_SELECT, qrySql)
@@ -422,7 +397,7 @@ func (r *RptAppList) GetList(s Search) ([]RptApp, error) {
 
 	var p RptApp
 	for rows.Next() {
-		rows.Scan(&p.Id, &p.RptNo, &p.AppNo, &p.AppReqNo, &p.TmplNo, &p.TmplVer, &p.Status, &p.BaseInfo, &p.TableInfo, &p.ChartInfo, &p.FileUrl, &p.RptUrl, &p.ErrCode, &p.ErrMsg, &p.InsertDate, &p.UpdateDate, &p.Version)
+		rows.Scan(&p.Id,&p.AppNo,&p.AppName,&p.AppKey,&p.AppIp,&p.BackUrl,&p.Status,&p.StartDate,&p.ExpireDate,&p.InsertDate,&p.UdpateDate,&p.Version)
 		r.RptApps = append(r.RptApps, p)
 	}
 	log.Println(SQL_ELAPSED, r)
@@ -431,6 +406,7 @@ func (r *RptAppList) GetList(s Search) ([]RptApp, error) {
 	}
 	return r.RptApps, nil
 }
+
 
 /*
 	说明：根据主键查询符合条件的记录，并保持成MAP
@@ -442,75 +418,69 @@ func (r *RptAppList) GetExt(s Search) (map[string]string, error) {
 	var where string
 	l := time.Now()
 
+	
+	
 	if s.Id != 0 {
 		where += " and id=" + fmt.Sprintf("%d", s.Id)
-	}
-
-	if s.RptNo != "" {
-		where += " and rpt_no='" + s.RptNo + "'"
-	}
-
+	}			
+	
+			
 	if s.AppNo != "" {
 		where += " and app_no='" + s.AppNo + "'"
-	}
-
-	if s.AppReqNo != "" {
-		where += " and app_req_no='" + s.AppReqNo + "'"
-	}
-
-	if s.TmplNo != "" {
-		where += " and tmpl_no='" + s.TmplNo + "'"
-	}
-
-	if s.TmplVer != "" {
-		where += " and tmpl_ver='" + s.TmplVer + "'"
-	}
-
+	}	
+	
+			
+	if s.AppName != "" {
+		where += " and app_name='" + s.AppName + "'"
+	}	
+	
+			
+	if s.AppKey != "" {
+		where += " and app_key='" + s.AppKey + "'"
+	}	
+	
+			
+	if s.AppIp != "" {
+		where += " and app_ip='" + s.AppIp + "'"
+	}	
+	
+			
+	if s.BackUrl != "" {
+		where += " and back_url='" + s.BackUrl + "'"
+	}	
+	
+			
 	if s.Status != "" {
 		where += " and status='" + s.Status + "'"
-	}
-
-	if s.BaseInfo != "" {
-		where += " and base_info='" + s.BaseInfo + "'"
-	}
-
-	if s.TableInfo != "" {
-		where += " and table_info='" + s.TableInfo + "'"
-	}
-
-	if s.ChartInfo != "" {
-		where += " and chart_info='" + s.ChartInfo + "'"
-	}
-
-	if s.FileUrl != "" {
-		where += " and file_url='" + s.FileUrl + "'"
-	}
-
-	if s.RptUrl != "" {
-		where += " and rpt_url='" + s.RptUrl + "'"
-	}
-
-	if s.ErrCode != "" {
-		where += " and err_code='" + s.ErrCode + "'"
-	}
-
-	if s.ErrMsg != "" {
-		where += " and err_msg='" + s.ErrMsg + "'"
-	}
-
+	}	
+	
+	
+	if s.StartDate != 0 {
+		where += " and start_date=" + fmt.Sprintf("%d", s.StartDate)
+	}			
+	
+	
+	if s.ExpireDate != 0 {
+		where += " and expire_date=" + fmt.Sprintf("%d", s.ExpireDate)
+	}			
+	
+	
 	if s.InsertDate != 0 {
 		where += " and insert_date=" + fmt.Sprintf("%d", s.InsertDate)
-	}
-
-	if s.UpdateDate != 0 {
-		where += " and update_date=" + fmt.Sprintf("%d", s.UpdateDate)
-	}
-
+	}			
+	
+	
+	if s.UdpateDate != 0 {
+		where += " and udpate_date=" + fmt.Sprintf("%d", s.UdpateDate)
+	}			
+	
+	
 	if s.Version != 0 {
 		where += " and version=" + fmt.Sprintf("%d", s.Version)
-	}
+	}			
+	
 
-	qrySql := fmt.Sprintf("Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1 %s ", where)
+	qrySql := fmt.Sprintf("Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1 %s ", where)
 	if r.Level == DEBUG {
 		log.Println(SQL_SELECT, qrySql)
 	}
@@ -520,6 +490,7 @@ func (r *RptAppList) GetExt(s Search) (map[string]string, error) {
 		return nil, err
 	}
 	defer rows.Close()
+
 
 	Columns, _ := rows.Columns()
 
@@ -556,11 +527,11 @@ func (r *RptAppList) GetExt(s Search) (map[string]string, error) {
 
 func (r RptAppList) Insert(p RptApp) error {
 	l := time.Now()
-	exeSql := fmt.Sprintf("Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version)  values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")
+	exeSql := fmt.Sprintf("Insert into  rpt_app(app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version)  values(?,?,?,?,?,?,?,?,?,?,?,?)")
 	if r.Level == DEBUG {
 		log.Println(SQL_INSERT, exeSql)
 	}
-	_, err := r.DB.Exec(exeSql, p.RptNo, p.AppNo, p.AppReqNo, p.TmplNo, p.TmplVer, p.Status, p.BaseInfo, p.TableInfo, p.ChartInfo, p.FileUrl, p.RptUrl, p.ErrCode, p.ErrMsg, p.InsertDate, p.UpdateDate, p.Version)
+	_, err := r.DB.Exec(exeSql, p.AppNo,p.AppName,p.AppKey,p.AppIp,p.BackUrl,p.Status,p.StartDate,p.ExpireDate,p.InsertDate,p.UdpateDate,p.Version)
 	if err != nil {
 		log.Println(SQL_ERROR, err.Error())
 		return err
@@ -571,116 +542,89 @@ func (r RptAppList) Insert(p RptApp) error {
 	return nil
 }
 
+
 /*
 	说明：插入对象到数据表中，这个方法会判读对象的各个属性，如果属性不为空，才加入插入列中；
 	入参：p:插入的对象
 	出参：参数1：如果出错，返回错误对象；成功返回nil
 */
 
+
 func (r RptAppList) InsertEntity(p RptApp, tr *sql.Tx) error {
 	l := time.Now()
 	var colNames, colTags string
 	valSlice := make([]interface{}, 0)
-
-	if p.RptNo != "" {
-		colNames += "rpt_no,"
-		colTags += "?,"
-		valSlice = append(valSlice, p.RptNo)
-	}
-
+	
+		
 	if p.AppNo != "" {
 		colNames += "app_no,"
 		colTags += "?,"
 		valSlice = append(valSlice, p.AppNo)
-	}
-
-	if p.AppReqNo != "" {
-		colNames += "app_req_no,"
+	}			
+		
+	if p.AppName != "" {
+		colNames += "app_name,"
 		colTags += "?,"
-		valSlice = append(valSlice, p.AppReqNo)
-	}
-
-	if p.TmplNo != "" {
-		colNames += "tmpl_no,"
+		valSlice = append(valSlice, p.AppName)
+	}			
+		
+	if p.AppKey != "" {
+		colNames += "app_key,"
 		colTags += "?,"
-		valSlice = append(valSlice, p.TmplNo)
-	}
-
-	if p.TmplVer != "" {
-		colNames += "tmpl_ver,"
+		valSlice = append(valSlice, p.AppKey)
+	}			
+		
+	if p.AppIp != "" {
+		colNames += "app_ip,"
 		colTags += "?,"
-		valSlice = append(valSlice, p.TmplVer)
-	}
-
+		valSlice = append(valSlice, p.AppIp)
+	}			
+		
+	if p.BackUrl != "" {
+		colNames += "back_url,"
+		colTags += "?,"
+		valSlice = append(valSlice, p.BackUrl)
+	}			
+		
 	if p.Status != "" {
 		colNames += "status,"
 		colTags += "?,"
 		valSlice = append(valSlice, p.Status)
-	}
-
-	if p.BaseInfo != "" {
-		colNames += "base_info,"
+	}			
+	
+	if p.StartDate != 0 {
+		colNames += "start_date,"
 		colTags += "?,"
-		valSlice = append(valSlice, p.BaseInfo)
-	}
-
-	if p.TableInfo != "" {
-		colNames += "table_info,"
+		valSlice = append(valSlice, p.StartDate)
+	}				
+	
+	if p.ExpireDate != 0 {
+		colNames += "expire_date,"
 		colTags += "?,"
-		valSlice = append(valSlice, p.TableInfo)
-	}
-
-	if p.ChartInfo != "" {
-		colNames += "chart_info,"
-		colTags += "?,"
-		valSlice = append(valSlice, p.ChartInfo)
-	}
-
-	if p.FileUrl != "" {
-		colNames += "file_url,"
-		colTags += "?,"
-		valSlice = append(valSlice, p.FileUrl)
-	}
-
-	if p.RptUrl != "" {
-		colNames += "rpt_url,"
-		colTags += "?,"
-		valSlice = append(valSlice, p.RptUrl)
-	}
-
-	if p.ErrCode != "" {
-		colNames += "err_code,"
-		colTags += "?,"
-		valSlice = append(valSlice, p.ErrCode)
-	}
-
-	if p.ErrMsg != "" {
-		colNames += "err_msg,"
-		colTags += "?,"
-		valSlice = append(valSlice, p.ErrMsg)
-	}
-
+		valSlice = append(valSlice, p.ExpireDate)
+	}				
+	
 	if p.InsertDate != 0 {
 		colNames += "insert_date,"
 		colTags += "?,"
 		valSlice = append(valSlice, p.InsertDate)
-	}
-
-	if p.UpdateDate != 0 {
-		colNames += "update_date,"
+	}				
+	
+	if p.UdpateDate != 0 {
+		colNames += "udpate_date,"
 		colTags += "?,"
-		valSlice = append(valSlice, p.UpdateDate)
-	}
-
+		valSlice = append(valSlice, p.UdpateDate)
+	}				
+	
 	if p.Version != 0 {
 		colNames += "version,"
 		colTags += "?,"
 		valSlice = append(valSlice, p.Version)
-	}
-
+	}				
+	
 	colNames = strings.TrimRight(colNames, ",")
 	colTags = strings.TrimRight(colTags, ",")
-	exeSql := fmt.Sprintf("Insert into  rpt_order(%s)  values(%s)", colNames, colTags)
+	exeSql := fmt.Sprintf("Insert into  rpt_app(%s)  values(%s)", colNames, colTags)
 	if r.Level == DEBUG {
 		log.Println(SQL_INSERT, exeSql)
 	}
@@ -722,7 +666,7 @@ func (r RptAppList) InsertEntity(p RptApp, tr *sql.Tx) error {
 	出参：参数1：如果出错，返回错误对象；成功返回nil
 */
 
-func (r RptAppList) InsertMap(m map[string]interface{}, tr *sql.Tx) error {
+func (r RptAppList) InsertMap(m map[string]interface{},tr *sql.Tx) error {
 	l := time.Now()
 	var colNames, colTags string
 	valSlice := make([]interface{}, 0)
@@ -734,7 +678,7 @@ func (r RptAppList) InsertMap(m map[string]interface{}, tr *sql.Tx) error {
 	colNames = strings.TrimRight(colNames, ",")
 	colTags = strings.TrimRight(colTags, ",")
 
-	exeSql := fmt.Sprintf("Insert into  rpt_order(%s)  values(%s)", colNames, colTags)
+	exeSql := fmt.Sprintf("Insert into  rpt_app(%s)  values(%s)", colNames, colTags)
 	if r.Level == DEBUG {
 		log.Println(SQL_INSERT, exeSql)
 	}
@@ -771,119 +715,91 @@ func (r RptAppList) InsertMap(m map[string]interface{}, tr *sql.Tx) error {
 	return nil
 }
 
+
+
 /*
 	说明：插入对象到数据表中，这个方法会判读对象的各个属性，如果属性不为空，才加入插入列中；
 	入参：p:插入的对象
 	出参：参数1：如果出错，返回错误对象；成功返回nil
 */
 
-func (r RptAppList) UpdataEntity(keyNo string, p RptApp, tr *sql.Tx) error {
+
+func (r RptAppList) UpdataEntity(keyNo string,p RptApp,tr *sql.Tx) error {
 	l := time.Now()
 	var colNames string
 	valSlice := make([]interface{}, 0)
-
+	
+	
 	if p.Id != 0 {
 		colNames += "id=?,"
 		valSlice = append(valSlice, p.Id)
-	}
-
-	if p.RptNo != "" {
-		colNames += "rpt_no=?,"
-
-		valSlice = append(valSlice, p.RptNo)
-	}
-
+	}				
+		
 	if p.AppNo != "" {
 		colNames += "app_no=?,"
-
+		
 		valSlice = append(valSlice, p.AppNo)
-	}
-
-	if p.AppReqNo != "" {
-		colNames += "app_req_no=?,"
-
-		valSlice = append(valSlice, p.AppReqNo)
-	}
-
-	if p.TmplNo != "" {
-		colNames += "tmpl_no=?,"
-
-		valSlice = append(valSlice, p.TmplNo)
-	}
-
-	if p.TmplVer != "" {
-		colNames += "tmpl_ver=?,"
-
-		valSlice = append(valSlice, p.TmplVer)
-	}
-
+	}			
+		
+	if p.AppName != "" {
+		colNames += "app_name=?,"
+		
+		valSlice = append(valSlice, p.AppName)
+	}			
+		
+	if p.AppKey != "" {
+		colNames += "app_key=?,"
+		
+		valSlice = append(valSlice, p.AppKey)
+	}			
+		
+	if p.AppIp != "" {
+		colNames += "app_ip=?,"
+		
+		valSlice = append(valSlice, p.AppIp)
+	}			
+		
+	if p.BackUrl != "" {
+		colNames += "back_url=?,"
+		
+		valSlice = append(valSlice, p.BackUrl)
+	}			
+		
 	if p.Status != "" {
 		colNames += "status=?,"
-
+		
 		valSlice = append(valSlice, p.Status)
-	}
-
-	if p.BaseInfo != "" {
-		colNames += "base_info=?,"
-
-		valSlice = append(valSlice, p.BaseInfo)
-	}
-
-	if p.TableInfo != "" {
-		colNames += "table_info=?,"
-
-		valSlice = append(valSlice, p.TableInfo)
-	}
-
-	if p.ChartInfo != "" {
-		colNames += "chart_info=?,"
-
-		valSlice = append(valSlice, p.ChartInfo)
-	}
-
-	if p.FileUrl != "" {
-		colNames += "file_url=?,"
-
-		valSlice = append(valSlice, p.FileUrl)
-	}
-
-	if p.RptUrl != "" {
-		colNames += "rpt_url=?,"
-
-		valSlice = append(valSlice, p.RptUrl)
-	}
-
-	if p.ErrCode != "" {
-		colNames += "err_code=?,"
-
-		valSlice = append(valSlice, p.ErrCode)
-	}
-
-	if p.ErrMsg != "" {
-		colNames += "err_msg=?,"
-
-		valSlice = append(valSlice, p.ErrMsg)
-	}
-
+	}			
+	
+	if p.StartDate != 0 {
+		colNames += "start_date=?,"
+		valSlice = append(valSlice, p.StartDate)
+	}				
+	
+	if p.ExpireDate != 0 {
+		colNames += "expire_date=?,"
+		valSlice = append(valSlice, p.ExpireDate)
+	}				
+	
 	if p.InsertDate != 0 {
 		colNames += "insert_date=?,"
 		valSlice = append(valSlice, p.InsertDate)
-	}
-
-	if p.UpdateDate != 0 {
-		colNames += "update_date=?,"
-		valSlice = append(valSlice, p.UpdateDate)
-	}
-
+	}				
+	
+	if p.UdpateDate != 0 {
+		colNames += "udpate_date=?,"
+		valSlice = append(valSlice, p.UdpateDate)
+	}				
+	
 	if p.Version != 0 {
 		colNames += "version=?,"
 		valSlice = append(valSlice, p.Version)
-	}
-
+	}				
+	
 	colNames = strings.TrimRight(colNames, ",")
 	valSlice = append(valSlice, keyNo)
 
-	exeSql := fmt.Sprintf("update  rpt_order  set %s  where id=? ", colNames)
+	exeSql := fmt.Sprintf("update  rpt_app  set %s  where id=? ", colNames)
 	if r.Level == DEBUG {
 		log.Println(SQL_INSERT, exeSql)
 	}
@@ -926,7 +842,7 @@ func (r RptAppList) UpdataEntity(keyNo string, p RptApp, tr *sql.Tx) error {
 	出参：参数1：如果出错，返回错误对象；成功返回nil
 */
 
-func (r RptAppList) UpdateMap(keyNo string, m map[string]interface{}, tr *sql.Tx) error {
+func (r RptAppList) UpdateMap(keyNo string, m map[string]interface{},tr *sql.Tx) error {
 	l := time.Now()
 
 	var colNames string
@@ -937,7 +853,7 @@ func (r RptAppList) UpdateMap(keyNo string, m map[string]interface{}, tr *sql.Tx
 	}
 	valSlice = append(valSlice, keyNo)
 	colNames = strings.TrimRight(colNames, ",")
-	updateSql := fmt.Sprintf("Update rpt_order set %s where id=?", colNames)
+	updateSql := fmt.Sprintf("Update rpt_app set %s where id=?", colNames)
 	if r.Level == DEBUG {
 		log.Println(SQL_UPDATE, updateSql)
 	}
@@ -948,7 +864,7 @@ func (r RptAppList) UpdateMap(keyNo string, m map[string]interface{}, tr *sql.Tx
 	} else {
 		stmt, err = tr.Prepare(updateSql)
 	}
-
+	
 	if err != nil {
 		log.Println(SQL_ERROR, err.Error())
 		return err
@@ -972,15 +888,16 @@ func (r RptAppList) UpdateMap(keyNo string, m map[string]interface{}, tr *sql.Tx
 	return nil
 }
 
+
 /*
 	说明：根据主键删除一条数据；
 	入参：keyNo:要删除的主键值
 	出参：参数1：如果出错，返回错误对象；成功返回nil
 */
 
-func (r RptAppList) Delete(keyNo string, tr *sql.Tx) error {
+func (r RptAppList) Delete(keyNo string,tr *sql.Tx) error {
 	l := time.Now()
-	delSql := fmt.Sprintf("Delete from  rpt_order  where id=?")
+	delSql := fmt.Sprintf("Delete from  rpt_app  where id=?")
 	if r.Level == DEBUG {
 		log.Println(SQL_UPDATE, delSql)
 	}
@@ -1015,3 +932,4 @@ func (r RptAppList) Delete(keyNo string, tr *sql.Tx) error {
 	}
 	return nil
 }
+

@@ -1,0 +1,107 @@
+2020/02/18 11:41:25.098509 main.go:37: config file == config-ci.json
+2020/02/18 11:41:25.116425 dbcomm.go:29: Database Connected successful!
+2020/02/18 11:41:25.117830 main.go:54: Listen Service start...
+2020/02/18 11:41:25.118002 main.go:63: listen:
+2020/02/18 11:41:28.058328 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:41:28.058473 Rpt.go:535: NewDecoder Json Error: invalid character '2' after object key
+2020/02/18 11:41:40.632946 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:41:40.642284 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:41:40.642593 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='sdfsdfs' and status='E' 
+2020/02/18 11:41:40.657224 Rpt.go:543: Query AppNo  Error: 3000
+2020/02/18 11:42:36.673467 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:42:36.675698 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:42:36.675831 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:42:36.684690 Rpt.go:543: Query AppNo  Error: 3000
+2020/02/18 11:44:25.756335 Common.go:98: ========》 [QryRptFile]
+2020/02/18 11:44:25.756751 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:44:25.756795 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:44:25.789350 Rpt.go:673: Query AppNo  Error: 3000
+2020/02/18 11:45:46.878111 Common.go:98: ========》 [QryRptFile]
+2020/02/18 11:45:46.878199 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:45:46.878288 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:45:46.910899 Rpt.go:673: Query AppNo  Error: 3000
+2020/02/18 11:46:49.427169 Common.go:98: ========》 [QryRptFile]
+2020/02/18 11:46:49.427674 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:46:49.427754 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:46:49.445311 Rpt.go:673: Query AppNo  Error: 3000
+2020/02/18 11:47:17.589323 Common.go:98: ========》 [QryRptFile]
+2020/02/18 11:47:17.596927 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:47:17.597047 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:47:17.616255 Rpt.go:673: Query AppNo  Error: 3000
+2020/02/18 11:47:25.658942 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:47:25.659566 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:47:25.659634 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:47:25.678742 Rpt.go:543: Query AppNo  Error: 3000
+2020/02/18 11:48:45.082408 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:48:45.082531 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:48:45.082565 RptApp.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:48:45.115081 Rpt.go:543: Query AppNo  Error: 3000
+2020/02/18 11:52:00.592405 main.go:37: config file == config-ci.json
+2020/02/18 11:52:00.601386 dbcomm.go:29: Database Connected successful!
+2020/02/18 11:52:00.601506 main.go:54: Listen Service start...
+2020/02/18 11:52:00.601607 main.go:63: listen:
+2020/02/18 11:52:04.093425 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:52:04.094028 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:52:04.094228 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:52:04.117632 RptApp.go:299: Elapsed===> {0xc00016e000 1 0 []}
+2020/02/18 11:52:04.117830 RptApp.go:301: Elapsed===> 23.656044ms
+2020/02/18 11:52:04.117915 Common.go:98: ========》 [qryTmpl]
+2020/02/18 11:52:04.117999 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='0001' and status='E' 
+2020/02/18 11:52:04.119632 RptTmpl.go:287: Elapsed===> {0xc00016e000 1 0 []}
+2020/02/18 11:52:04.119695 RptTmpl.go:289: Elapsed===> 1.726081ms
+2020/02/18 11:52:04.119737 Common.go:98: ========》 [parserTmpl]
+2020/02/18 11:52:04.120313 Common.go:102: 《======== [parserTmpl]
+2020/02/18 11:52:04.120399 Common.go:102: 《======== [QryAgrt]
+2020/02/18 11:53:13.692325 Common.go:98: ========》 [QryRptFile]
+2020/02/18 11:53:13.699998 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:53:13.700086 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:53:13.739589 RptApp.go:299: Elapsed===> {0xc00016e000 1 0 []}
+2020/02/18 11:53:13.739659 RptApp.go:301: Elapsed===> 39.591376ms
+2020/02/18 11:53:13.739754 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/18 11:53:13.747700 RptOrder.go:318: Elapsed===> {0xc00016e000 1 0 []}
+2020/02/18 11:53:13.747801 RptOrder.go:320: Elapsed===> 8.047678ms
+2020/02/18 11:53:13.748400 Rpt.go:686: Open File Error: open /tmp/pdfile//tmp/pdfile/pdf_123.pdf: no such file or directory
+2020/02/18 11:53:57.471680 main.go:37: config file == config-ci.json
+2020/02/18 11:53:57.488280 dbcomm.go:29: Database Connected successful!
+2020/02/18 11:53:57.488666 main.go:54: Listen Service start...
+2020/02/18 11:53:57.488907 main.go:63: listen:
+2020/02/18 11:54:06.511816 Common.go:98: ========》 [QryRptFile]
+2020/02/18 11:54:06.512024 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:54:06.512100 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:54:06.536898 RptApp.go:299: Elapsed===> {0xc00015c000 1 0 []}
+2020/02/18 11:54:06.537016 RptApp.go:301: Elapsed===> 24.93242ms
+2020/02/18 11:54:06.537114 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/18 11:54:06.541857 RptOrder.go:318: Elapsed===> {0xc00015c000 1 0 []}
+2020/02/18 11:54:06.541932 RptOrder.go:320: Elapsed===> 4.858146ms
+2020/02/18 11:54:06.542948 Common.go:102: 《======== [QryRptFile]
+2020/02/18 11:55:44.871765 Common.go:98: ========》 [QryRptStatus]
+2020/02/18 11:55:44.881152 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:55:44.882902 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:55:44.894379 RptApp.go:299: Elapsed===> {0xc00015c000 1 0 []}
+2020/02/18 11:55:44.894476 RptApp.go:301: Elapsed===> 11.577052ms
+2020/02/18 11:55:44.894615 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/18 11:55:44.897186 RptOrder.go:318: Elapsed===> {0xc00015c000 1 0 []}
+2020/02/18 11:55:44.897274 RptOrder.go:320: Elapsed===> 2.74826ms
+2020/02/18 11:55:44.897402 Common.go:102: 《======== [QryRptStatus]
+2020/02/18 11:55:50.298873 Common.go:98: ========》 [QryRptStatus]
+2020/02/18 11:55:50.299014 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:55:50.299055 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:55:50.307419 RptApp.go:299: Elapsed===> {0xc00015c000 1 0 []}
+2020/02/18 11:55:50.307488 RptApp.go:301: Elapsed===> 8.434225ms
+2020/02/18 11:55:50.307532 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/18 11:55:50.309083 RptOrder.go:318: Elapsed===> {0xc00015c000 1 0 []}
+2020/02/18 11:55:50.309147 RptOrder.go:320: Elapsed===> 1.616ms
+2020/02/18 11:55:50.309235 Common.go:102: 《======== [QryRptStatus]
+2020/02/18 11:56:59.310532 main.go:37: config file == config-ci.json
+2020/02/18 11:56:59.321561 dbcomm.go:29: Database Connected successful!
+2020/02/18 11:56:59.322006 main.go:54: Listen Service start...
+2020/02/18 11:56:59.322097 main.go:63: listen:
+2020/02/18 11:57:03.109588 Common.go:98: ========》 [QryRptStatus]
+2020/02/18 11:57:03.109852 Common.go:98: ========》 [QryAgrt]
+2020/02/18 11:57:03.109929 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/18 11:57:03.120183 RptApp.go:299: Elapsed===> {0xc000162000 1 0 []}
+2020/02/18 11:57:03.120334 RptApp.go:301: Elapsed===> 10.403102ms
+2020/02/18 11:57:03.120473 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/18 11:57:03.122820 RptOrder.go:318: Elapsed===> {0xc000162000 1 0 []}
+2020/02/18 11:57:03.122965 RptOrder.go:320: Elapsed===> 2.503398ms
+2020/02/18 11:57:03.123146 Common.go:102: 《======== [QryRptStatus]
