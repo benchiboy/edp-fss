@@ -200,6 +200,7 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 		drawText(pdf, v.ContentSize, v.Content)
 
 		if v.Table != common.EMPTY_STRING {
+			log.Println("Draw a table...", v.TableCols, tableMap[v.Table])
 			drawDTable(pdf, v.TableCols, v.TableTitleSize, v.TableDataSize, tableMap[v.Table])
 		}
 
@@ -209,7 +210,7 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 	}
 
 	drawFooter(pdf, pdfTmpl.FooterSize, pdfTmpl.Footer)
-	pdfName := common.DEFAULT_PATH + fmt.Sprintf("pdf_%d.pdf", 123)
+	pdfName := common.DEFAULT_PATH + fmt.Sprintf("pdf_%d.pdf", time.Now().UnixNano())
 	err := pdf.OutputFileAndClose(pdfName)
 	log.Println(err)
 	return nil, pdfName
@@ -231,12 +232,15 @@ func drawDTable(pdf *gofpdf.Fpdf, colLens []float64, titleSize float64, dataSize
 		totalLen += v
 	}
 	if totalLen == 0 {
+		log.Println("表格合计长度不能为%d", totalLen)
 		return fmt.Errorf("表格合计长度不能为%d", totalLen)
 	}
-	if totalLen > pageWidth {
+	if totalLen > pageWidth+1 {
+		log.Println("表格合计长度不能为", totalLen)
 		return fmt.Errorf("表格合计长度%d长度大于pageWidth", totalLen)
 	}
 	fill := false
+
 	for i, v := range tableData {
 		if i == 0 {
 			pdf.SetFillColor(255, 0, 0)
@@ -260,6 +264,7 @@ func drawDTable(pdf *gofpdf.Fpdf, colLens []float64, titleSize float64, dataSize
 			pdf.SetTextColor(0, 0, 0)
 			pdf.SetFont(FontName, "", dataSize)
 			for j, vv := range v {
+
 				pdf.CellFormat(w[j], 10, vv.Value, "1", 0, "L", fill, 0, "")
 			}
 			fill = !fill
@@ -647,7 +652,8 @@ func CrtRptFile(w http.ResponseWriter, req *http.Request) {
 		r.InsertEntity(e, nil)
 
 	} else {
-
+		crtResp.AppReqNo = u.AppReqNo
+		crtResp.RptNo = u.RptNo
 		crtResp.ErrCode = u.ErrCode
 		crtResp.ErrCode = u.ErrMsg
 		common.Write_Response(crtResp, w, req)
@@ -666,11 +672,15 @@ func CrtRptFile(w http.ResponseWriter, req *http.Request) {
 		"file_url": pdfName}
 
 	r.UpdateMap(e.RptNo, tmpMap, nil)
+
+	crtResp.AppReqNo = e.AppReqNo
+	crtResp.RptNo = e.RptNo
 	crtResp.ErrCode = common.ERR_CODE_SUCCESS
-	crtResp.ErrCode = common.ERROR_MAP[common.ERR_CODE_SUCCESS]
+	crtResp.ErrMsg = common.ERROR_MAP[common.ERR_CODE_SUCCESS]
 	common.Write_Response(crtResp, w, req)
 
 	common.PrintTail("CrtRptFile")
+
 }
 
 /*
@@ -722,6 +732,7 @@ func QryRptFile(w http.ResponseWriter, req *http.Request) {
 	if u, err := r.Get(search); err != nil {
 		w.WriteHeader(http.StatusForbidden)
 	} else {
+		log.Println(u.FileUrl)
 		if buf, err := ioutil.ReadFile(u.FileUrl); err != nil {
 			log.Println("Open File Error:", err)
 			w.WriteHeader(http.StatusInternalServerError)

@@ -105,3 +105,1053 @@
 2020/02/18 11:57:03.122820 RptOrder.go:318: Elapsed===> {0xc000162000 1 0 []}
 2020/02/18 11:57:03.122965 RptOrder.go:320: Elapsed===> 2.503398ms
 2020/02/18 11:57:03.123146 Common.go:102: 《======== [QryRptStatus]
+2020/02/19 11:48:02.475359 main.go:37: config file == config-ci.json
+2020/02/19 11:48:02.476974 dbcomm.go:23: Ping database error: dial tcp 127.0.0.1:3306: connect: connection refused
+2020/02/19 11:48:02.477074 main.go:54: Listen Service start...
+2020/02/19 11:48:02.477126 main.go:63: listen:
+2020/02/19 11:48:54.667830 main.go:37: config file == config-ci.json
+2020/02/19 11:48:54.732727 dbcomm.go:29: Database Connected successful!
+2020/02/19 11:48:54.732844 main.go:54: Listen Service start...
+2020/02/19 11:48:54.732893 main.go:63: listen:
+2020/02/19 11:48:58.551541 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:48:58.551869 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:48:58.551943 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:48:58.626574 RptApp.go:299: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:48:58.626683 RptApp.go:301: Elapsed===> 74.758182ms
+2020/02/19 11:48:58.626741 Common.go:98: ========》 [qryTmpl]
+2020/02/19 11:48:58.626782 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='0001' and status='E' 
+2020/02/19 11:48:58.640038 RptTmpl.go:287: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:48:58.640103 RptTmpl.go:289: Elapsed===> 13.324683ms
+2020/02/19 11:48:58.640137 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:48:58.640407 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:48:58.640442 Common.go:102: 《======== [QryAgrt]
+2020/02/19 11:50:10.297614 Common.go:98: ========》 [QryRptFile]
+2020/02/19 11:50:10.305794 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:50:10.306375 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:50:10.327238 RptApp.go:299: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:50:10.327306 RptApp.go:301: Elapsed===> 20.959443ms
+2020/02/19 11:50:10.327367 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/19 11:50:10.336645 RptOrder.go:318: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:50:10.336717 RptOrder.go:320: Elapsed===> 9.362454ms
+2020/02/19 11:50:10.336831 Rpt.go:726: Open File Error: open /tmp/pdfile/pdf_123.pdf: no such file or directory
+2020/02/19 11:50:52.625741 Common.go:98: ========》 [QryRptFile]
+2020/02/19 11:50:52.633325 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:50:52.633403 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:50:52.651981 RptApp.go:299: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:50:52.652086 RptApp.go:301: Elapsed===> 18.684552ms
+2020/02/19 11:50:52.652287 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/19 11:50:52.658213 RptOrder.go:318: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:50:52.658368 RptOrder.go:320: Elapsed===> 6.116958ms
+2020/02/19 11:50:52.658516 Rpt.go:726: Open File Error: open /tmp/pdfile/pdf_123.pdf: no such file or directory
+2020/02/19 11:51:22.808477 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 11:51:22.817052 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:51:22.817147 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:51:22.840379 RptApp.go:299: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:51:22.840456 RptApp.go:301: Elapsed===> 23.33018ms
+2020/02/19 11:51:22.840725 Common.go:98: ========》 [qryTmpl]
+2020/02/19 11:51:22.841880 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 11:51:22.857983 RptTmpl.go:287: Elapsed===> {0xc0001240c0 1 0 []}
+2020/02/19 11:51:22.858065 RptTmpl.go:289: Elapsed===> 16.18968ms
+2020/02/19 11:51:22.858335 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 11:51:22.861521 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 11:51:22.867612 RptOrder.go:707: Insert ===> LastInsertId: 17
+2020/02/19 11:51:22.867738 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 11:51:22.867805 RptOrder.go:714: Elapsed===> 6.309059ms
+2020/02/19 11:51:22.868178 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 11:51:22.892311 Common.go:98: ========》 [initPdf]
+2020/02/19 11:51:22.892369 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 11:51:22.892383 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 11:51:22.892392 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 11:51:22.892401 Common.go:102: 《======== [initPdf]
+2020/02/19 11:51:22.892425 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:51:22.892504 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:51:22.892555 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:51:22.892648 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:51:22.892908 Rpt.go:214: open /tmp/pdfile/pdf_123.pdf: no such file or directory
+2020/02/19 11:51:22.892937 RptOrder.go:942: Update ===> Update rpt_order set err_msg=?,file_url=?,err_code=? where rpt_no=?
+2020/02/19 11:51:22.897209 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 11:51:22.897267 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 11:51:22.897289 RptOrder.go:970: Elapsed===> 4.353246ms
+2020/02/19 11:51:22.897429 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 11:58:23.752674 main.go:37: config file == config-ci.json
+2020/02/19 11:58:23.759083 dbcomm.go:29: Database Connected successful!
+2020/02/19 11:58:23.759178 main.go:54: Listen Service start...
+2020/02/19 11:58:23.759279 main.go:63: listen:
+2020/02/19 11:58:30.780160 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 11:58:30.783481 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:58:30.783669 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:58:30.796843 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:30.796969 RptApp.go:301: Elapsed===> 13.372781ms
+2020/02/19 11:58:30.797038 Common.go:98: ========》 [qryTmpl]
+2020/02/19 11:58:30.797086 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 11:58:30.808618 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:30.808686 RptTmpl.go:289: Elapsed===> 11.603337ms
+2020/02/19 11:58:30.809010 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 11:58:30.813667 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 11:58:30.816047 RptOrder.go:707: Insert ===> LastInsertId: 18
+2020/02/19 11:58:30.816109 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 11:58:30.816144 RptOrder.go:714: Elapsed===> 2.516175ms
+2020/02/19 11:58:30.816239 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 11:58:30.833353 Common.go:98: ========》 [initPdf]
+2020/02/19 11:58:30.833438 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 11:58:30.833465 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 11:58:30.833487 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 11:58:30.833507 Common.go:102: 《======== [initPdf]
+2020/02/19 11:58:30.833548 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:30.833689 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:30.833765 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:30.834003 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:30.848972 Rpt.go:214: <nil>
+2020/02/19 11:58:30.849137 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 11:58:30.853281 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 11:58:30.853406 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 11:58:30.853431 RptOrder.go:970: Elapsed===> 4.298087ms
+2020/02/19 11:58:30.853596 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 11:58:37.825005 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 11:58:37.825540 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:58:37.825712 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:58:37.836979 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:37.837076 RptApp.go:301: Elapsed===> 11.369894ms
+2020/02/19 11:58:37.837146 Common.go:98: ========》 [qryTmpl]
+2020/02/19 11:58:37.837199 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 11:58:37.841494 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:37.841567 RptTmpl.go:289: Elapsed===> 4.376755ms
+2020/02/19 11:58:37.841817 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 11:58:37.846483 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 11:58:37.849134 RptOrder.go:707: Insert ===> LastInsertId: 19
+2020/02/19 11:58:37.849195 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 11:58:37.849221 RptOrder.go:714: Elapsed===> 2.75159ms
+2020/02/19 11:58:37.849301 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 11:58:37.864644 Common.go:98: ========》 [initPdf]
+2020/02/19 11:58:37.864736 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 11:58:37.864782 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 11:58:37.864812 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 11:58:37.864840 Common.go:102: 《======== [initPdf]
+2020/02/19 11:58:37.864879 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:37.865003 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:37.865073 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:37.865213 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:37.879645 Rpt.go:214: <nil>
+2020/02/19 11:58:37.879707 RptOrder.go:942: Update ===> Update rpt_order set err_msg=?,file_url=?,err_code=? where rpt_no=?
+2020/02/19 11:58:37.885753 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 11:58:37.885834 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 11:58:37.885884 RptOrder.go:970: Elapsed===> 6.180342ms
+2020/02/19 11:58:37.885991 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 11:58:38.876013 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 11:58:38.876467 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:58:38.876525 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:58:38.878702 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:38.878837 RptApp.go:301: Elapsed===> 2.314ms
+2020/02/19 11:58:38.878969 Common.go:98: ========》 [qryTmpl]
+2020/02/19 11:58:38.879062 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 11:58:38.885691 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:38.885768 RptTmpl.go:289: Elapsed===> 6.72216ms
+2020/02/19 11:58:38.885892 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 11:58:38.888549 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 11:58:38.896093 RptOrder.go:707: Insert ===> LastInsertId: 20
+2020/02/19 11:58:38.896159 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 11:58:38.896184 RptOrder.go:714: Elapsed===> 7.647886ms
+2020/02/19 11:58:38.896238 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 11:58:38.916311 Common.go:98: ========》 [initPdf]
+2020/02/19 11:58:38.917377 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 11:58:38.917424 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 11:58:38.917445 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 11:58:38.917466 Common.go:102: 《======== [initPdf]
+2020/02/19 11:58:38.917506 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:38.917613 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:38.917688 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:38.917810 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:38.940508 Rpt.go:214: <nil>
+2020/02/19 11:58:38.940615 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 11:58:38.956317 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 11:58:38.956394 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 11:58:38.956431 RptOrder.go:970: Elapsed===> 15.849018ms
+2020/02/19 11:58:38.956526 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 11:58:39.852291 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 11:58:39.852513 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:58:39.852568 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:58:39.861003 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:39.861107 RptApp.go:301: Elapsed===> 8.54684ms
+2020/02/19 11:58:39.861167 Common.go:98: ========》 [qryTmpl]
+2020/02/19 11:58:39.861201 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 11:58:39.865067 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:39.865125 RptTmpl.go:289: Elapsed===> 3.926318ms
+2020/02/19 11:58:39.865254 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 11:58:39.870013 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 11:58:39.873485 RptOrder.go:707: Insert ===> LastInsertId: 21
+2020/02/19 11:58:39.873540 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 11:58:39.873560 RptOrder.go:714: Elapsed===> 3.574235ms
+2020/02/19 11:58:39.873613 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 11:58:39.887464 Common.go:98: ========》 [initPdf]
+2020/02/19 11:58:39.887611 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 11:58:39.887725 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 11:58:39.887747 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 11:58:39.887764 Common.go:102: 《======== [initPdf]
+2020/02/19 11:58:39.887794 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:39.888037 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:39.888094 Common.go:98: ========》 [parserTmpl]
+2020/02/19 11:58:39.888202 Common.go:102: 《======== [parserTmpl]
+2020/02/19 11:58:39.902774 Rpt.go:214: <nil>
+2020/02/19 11:58:39.902806 RptOrder.go:942: Update ===> Update rpt_order set file_url=?,err_code=?,err_msg=? where rpt_no=?
+2020/02/19 11:58:39.905942 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 11:58:39.905998 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 11:58:39.906022 RptOrder.go:970: Elapsed===> 3.216718ms
+2020/02/19 11:58:39.906126 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 11:58:54.644431 Common.go:98: ========》 [QryRptFile]
+2020/02/19 11:58:54.652044 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:58:54.652144 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:58:54.662031 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:54.662121 RptApp.go:301: Elapsed===> 10.004395ms
+2020/02/19 11:58:54.662251 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1581951493037909000' and app_no='0001' 
+2020/02/19 11:58:54.670698 RptOrder.go:318: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:58:54.670768 RptOrder.go:320: Elapsed===> 8.533307ms
+2020/02/19 11:58:54.670884 Rpt.go:731: Open File Error: open /tmp/pdfile/pdf_123.pdf: no such file or directory
+2020/02/19 11:59:42.350999 Common.go:98: ========》 [QryRptFile]
+2020/02/19 11:59:42.351338 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:59:42.351400 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:59:42.359905 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:59:42.359978 RptApp.go:301: Elapsed===> 8.588764ms
+2020/02/19 11:59:42.360057 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084719869928000' and app_no='0001' 
+2020/02/19 11:59:42.364762 RptOrder.go:318: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:59:42.364844 RptOrder.go:320: Elapsed===> 4.788665ms
+2020/02/19 11:59:42.365558 Common.go:102: 《======== [QryRptFile]
+2020/02/19 11:59:51.627501 Common.go:98: ========》 [QryRptFile]
+2020/02/19 11:59:51.629618 Common.go:98: ========》 [QryAgrt]
+2020/02/19 11:59:51.629694 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 11:59:51.663830 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:59:51.664099 RptApp.go:301: Elapsed===> 34.403231ms
+2020/02/19 11:59:51.664315 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084719869928000' and app_no='0001' 
+2020/02/19 11:59:51.669093 RptOrder.go:318: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 11:59:51.669152 RptOrder.go:320: Elapsed===> 4.902606ms
+2020/02/19 11:59:51.669812 Common.go:102: 《======== [QryRptFile]
+2020/02/19 12:00:14.894761 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:00:14.903882 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:00:14.904039 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:00:14.923331 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:00:14.923407 RptApp.go:301: Elapsed===> 19.370446ms
+2020/02/19 12:00:14.923629 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:00:14.923734 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:00:14.929583 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:00:14.929653 RptTmpl.go:289: Elapsed===> 5.919405ms
+2020/02/19 12:00:14.929809 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:00:14.942129 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:00:14.949144 RptOrder.go:707: Insert ===> LastInsertId: 22
+2020/02/19 12:00:14.949307 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:00:14.949351 RptOrder.go:714: Elapsed===> 7.233791ms
+2020/02/19 12:00:14.949468 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:00:14.970362 Common.go:98: ========》 [initPdf]
+2020/02/19 12:00:14.970407 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:00:14.970417 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:00:14.970426 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:00:14.970434 Common.go:102: 《======== [initPdf]
+2020/02/19 12:00:14.970467 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:00:14.970547 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:00:14.970583 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:00:14.970696 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:00:14.981380 Rpt.go:214: <nil>
+2020/02/19 12:00:14.981435 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:00:14.984386 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:00:14.984434 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:00:14.984454 RptOrder.go:970: Elapsed===> 3.021231ms
+2020/02/19 12:00:14.984537 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:00:26.573159 Common.go:98: ========》 [QryRptFile]
+2020/02/19 12:00:26.573230 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:00:26.573268 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:00:26.586604 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:00:26.586667 RptApp.go:301: Elapsed===> 13.411059ms
+2020/02/19 12:00:26.586837 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084814942052000' and app_no='0001' 
+2020/02/19 12:00:26.594795 RptOrder.go:318: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:00:26.594879 RptOrder.go:320: Elapsed===> 8.067837ms
+2020/02/19 12:00:26.597834 Common.go:102: 《======== [QryRptFile]
+2020/02/19 12:02:50.423268 main.go:37: config file == config-ci.json
+2020/02/19 12:02:50.432977 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:02:50.433115 main.go:54: Listen Service start...
+2020/02/19 12:02:50.433205 main.go:63: listen:
+2020/02/19 12:02:55.734748 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:02:55.735262 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:02:55.735361 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:02:55.753521 RptApp.go:299: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:02:55.753639 RptApp.go:301: Elapsed===> 18.296951ms
+2020/02/19 12:02:55.753731 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:02:55.753926 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:02:55.757987 RptTmpl.go:287: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:02:55.758103 RptTmpl.go:289: Elapsed===> 4.238901ms
+2020/02/19 12:02:55.758604 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:02:55.774281 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:02:55.785305 RptOrder.go:707: Insert ===> LastInsertId: 23
+2020/02/19 12:02:55.785387 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:02:55.785433 RptOrder.go:714: Elapsed===> 11.195248ms
+2020/02/19 12:02:55.785523 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:02:55.807138 Common.go:98: ========》 [initPdf]
+2020/02/19 12:02:55.807214 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:02:55.807233 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:02:55.807276 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:02:55.807318 Common.go:102: 《======== [initPdf]
+2020/02/19 12:02:55.807359 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:02:55.807557 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:02:55.807636 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:02:55.807867 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:02:55.808080 Rpt.go:203: Draw a table...
+2020/02/19 12:02:55.819132 Rpt.go:215: <nil>
+2020/02/19 12:02:55.819216 RptOrder.go:942: Update ===> Update rpt_order set file_url=?,err_code=?,err_msg=? where rpt_no=?
+2020/02/19 12:02:55.822236 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:02:55.822306 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:02:55.822343 RptOrder.go:970: Elapsed===> 3.130578ms
+2020/02/19 12:02:55.822502 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:03:14.212340 Common.go:98: ========》 [QryRptFile]
+2020/02/19 12:03:14.212566 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:03:14.212702 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:03:14.223675 RptApp.go:299: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:03:14.223752 RptApp.go:301: Elapsed===> 11.076415ms
+2020/02/19 12:03:14.223812 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084975774124000' and app_no='0001' 
+2020/02/19 12:03:14.226152 RptOrder.go:318: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:03:14.226255 RptOrder.go:320: Elapsed===> 2.452781ms
+2020/02/19 12:03:14.226594 Common.go:102: 《======== [QryRptFile]
+2020/02/19 12:03:44.670565 Common.go:98: ========》 [QryRptFile]
+2020/02/19 12:03:44.671038 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:03:44.671102 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:03:44.684568 RptApp.go:299: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:03:44.684784 RptApp.go:301: Elapsed===> 13.686271ms
+2020/02/19 12:03:44.685153 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084975774124000' and app_no='0001' 
+2020/02/19 12:03:44.687803 RptOrder.go:318: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:03:44.687915 RptOrder.go:320: Elapsed===> 2.77933ms
+2020/02/19 12:03:44.688128 Common.go:102: 《======== [QryRptFile]
+2020/02/19 12:04:05.876854 Common.go:98: ========》 [QryRptFile]
+2020/02/19 12:04:05.876925 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:04:05.876951 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:04:05.883466 RptApp.go:299: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:04:05.883540 RptApp.go:301: Elapsed===> 6.58764ms
+2020/02/19 12:04:05.883604 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084975774124000' and app_no='0001' 
+2020/02/19 12:04:05.884757 RptOrder.go:318: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:04:05.884803 RptOrder.go:320: Elapsed===> 1.20594ms
+2020/02/19 12:04:05.885167 Common.go:102: 《======== [QryRptFile]
+2020/02/19 12:04:30.680021 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:04:30.687754 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:04:30.687939 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:04:30.700919 RptApp.go:299: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:04:30.701108 RptApp.go:301: Elapsed===> 13.169189ms
+2020/02/19 12:04:30.701254 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:04:30.709867 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:04:30.717239 RptTmpl.go:287: Elapsed===> {0xc000176000 1 0 []}
+2020/02/19 12:04:30.717413 RptTmpl.go:289: Elapsed===> 7.552811ms
+2020/02/19 12:04:30.717582 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:04:30.719563 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:04:30.723038 RptOrder.go:707: Insert ===> LastInsertId: 24
+2020/02/19 12:04:30.723108 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:04:30.723143 RptOrder.go:714: Elapsed===> 3.595234ms
+2020/02/19 12:04:30.723260 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:04:30.748182 Common.go:98: ========》 [initPdf]
+2020/02/19 12:04:30.748327 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:04:30.748359 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:04:30.748383 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:04:30.748406 Common.go:102: 《======== [initPdf]
+2020/02/19 12:04:30.748446 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:04:30.748536 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:04:30.748642 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:04:30.748841 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:04:30.749288 Rpt.go:203: Draw a table...
+2020/02/19 12:04:30.764284 Rpt.go:215: <nil>
+2020/02/19 12:04:30.764450 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:04:30.767969 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:04:30.768096 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:04:30.768167 RptOrder.go:970: Elapsed===> 3.723776ms
+2020/02/19 12:04:30.768274 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:06:03.612191 main.go:37: config file == config-ci.json
+2020/02/19 12:06:03.619063 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:06:03.619307 main.go:54: Listen Service start...
+2020/02/19 12:06:03.619413 main.go:63: listen:
+2020/02/19 12:06:07.880805 Common.go:98: ========》 [QryRptFile]
+2020/02/19 12:06:07.880960 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:06:07.881020 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:06:07.890225 RptApp.go:299: Elapsed===> {0xc000162000 1 0 []}
+2020/02/19 12:06:07.890304 RptApp.go:301: Elapsed===> 9.303601ms
+2020/02/19 12:06:07.890443 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084975774124000' and app_no='0001' 
+2020/02/19 12:06:07.893613 RptOrder.go:318: Elapsed===> {0xc000162000 1 0 []}
+2020/02/19 12:06:07.893677 RptOrder.go:320: Elapsed===> 3.260543ms
+2020/02/19 12:06:07.893741 Rpt.go:731: /tmp/pdfile/pdf_1582084975808196000.pdf
+2020/02/19 12:06:07.902008 Common.go:102: 《======== [QryRptFile]
+2020/02/19 12:06:55.677584 Common.go:98: ========》 [QryRptFile]
+2020/02/19 12:06:55.678056 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:06:55.678125 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:06:55.684952 RptApp.go:299: Elapsed===> {0xc000162000 1 0 []}
+2020/02/19 12:06:55.685061 RptApp.go:301: Elapsed===> 6.928363ms
+2020/02/19 12:06:55.685159 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582084975774124000' and app_no='0001' 
+2020/02/19 12:06:55.686893 RptOrder.go:318: Elapsed===> {0xc000162000 1 0 []}
+2020/02/19 12:06:55.687003 RptOrder.go:320: Elapsed===> 1.844955ms
+2020/02/19 12:06:55.687048 Rpt.go:731: /tmp/pdfile/pdf_1582084975808196000.pdf
+2020/02/19 12:06:55.687526 Common.go:102: 《======== [QryRptFile]
+2020/02/19 12:10:26.664801 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:10:26.673205 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:10:26.673400 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:10:26.694604 RptApp.go:299: Elapsed===> {0xc000162000 1 0 []}
+2020/02/19 12:10:26.694709 RptApp.go:301: Elapsed===> 21.347626ms
+2020/02/19 12:10:26.694773 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:10:26.694830 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:10:26.699210 RptTmpl.go:287: Elapsed===> {0xc000162000 1 0 []}
+2020/02/19 12:10:26.699297 RptTmpl.go:289: Elapsed===> 4.471515ms
+2020/02/19 12:10:26.699697 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:10:26.702028 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:10:26.707648 RptOrder.go:707: Insert ===> LastInsertId: 25
+2020/02/19 12:10:26.707734 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:10:26.707772 RptOrder.go:714: Elapsed===> 5.779613ms
+2020/02/19 12:10:26.707847 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:10:26.730270 Common.go:98: ========》 [initPdf]
+2020/02/19 12:10:26.730419 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:10:26.730447 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:10:26.730466 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:10:26.730485 Common.go:102: 《======== [initPdf]
+2020/02/19 12:10:26.730529 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:10:26.730710 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:10:26.730815 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:10:26.730995 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:10:26.731216 Rpt.go:203: Draw a table...
+2020/02/19 12:10:26.746647 Rpt.go:215: <nil>
+2020/02/19 12:10:26.746716 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:10:26.749515 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:10:26.749570 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:10:26.749600 RptOrder.go:970: Elapsed===> 2.888312ms
+2020/02/19 12:10:26.749810 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:11:27.963326 main.go:37: config file == config-ci.json
+2020/02/19 12:11:27.969885 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:11:27.970122 main.go:54: Listen Service start...
+2020/02/19 12:11:27.970224 main.go:63: listen:
+2020/02/19 12:11:33.637909 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:11:33.638473 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:11:33.638568 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:11:33.649888 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:33.649973 RptApp.go:301: Elapsed===> 11.424281ms
+2020/02/19 12:11:33.650035 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:11:33.650103 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:11:33.666580 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:33.666754 RptTmpl.go:289: Elapsed===> 16.677433ms
+2020/02/19 12:11:33.667092 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:11:33.672570 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:11:33.686974 RptOrder.go:707: Insert ===> LastInsertId: 26
+2020/02/19 12:11:33.687090 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:11:33.687127 RptOrder.go:714: Elapsed===> 14.678696ms
+2020/02/19 12:11:33.687188 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:11:33.712901 Common.go:98: ========》 [initPdf]
+2020/02/19 12:11:33.713037 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:11:33.713090 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:11:33.713136 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:11:33.713178 Common.go:102: 《======== [initPdf]
+2020/02/19 12:11:33.713248 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:33.713515 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:33.713689 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:33.714021 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:33.714250 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:11:33.725671 Rpt.go:215: <nil>
+2020/02/19 12:11:33.725736 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:11:33.729462 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:11:33.729705 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:11:33.729802 RptOrder.go:970: Elapsed===> 4.06866ms
+2020/02/19 12:11:33.730057 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:11:36.174690 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:11:36.175327 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:11:36.175380 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:11:36.180366 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:36.180427 RptApp.go:301: Elapsed===> 5.054727ms
+2020/02/19 12:11:36.180454 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:11:36.180487 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:11:36.183501 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:36.183623 RptTmpl.go:289: Elapsed===> 3.146861ms
+2020/02/19 12:11:36.183776 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:11:36.185185 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:11:36.188380 RptOrder.go:707: Insert ===> LastInsertId: 27
+2020/02/19 12:11:36.188436 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:11:36.188461 RptOrder.go:714: Elapsed===> 3.289893ms
+2020/02/19 12:11:36.188523 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:11:36.203147 Common.go:98: ========》 [initPdf]
+2020/02/19 12:11:36.203216 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:11:36.203240 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:11:36.203255 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:11:36.203266 Common.go:102: 《======== [initPdf]
+2020/02/19 12:11:36.203287 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:36.203378 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:36.203442 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:36.203593 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:36.203781 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:11:36.226115 Rpt.go:215: <nil>
+2020/02/19 12:11:36.226274 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:11:36.231606 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:11:36.231665 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:11:36.231687 RptOrder.go:970: Elapsed===> 5.436521ms
+2020/02/19 12:11:36.231816 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:11:36.997875 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:11:36.998035 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:11:36.998065 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:11:36.999537 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:36.999610 RptApp.go:301: Elapsed===> 1.548945ms
+2020/02/19 12:11:36.999645 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:11:36.999675 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:11:37.002299 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:37.002365 RptTmpl.go:289: Elapsed===> 2.692128ms
+2020/02/19 12:11:37.002498 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:11:37.004607 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:11:37.010682 RptOrder.go:707: Insert ===> LastInsertId: 28
+2020/02/19 12:11:37.010758 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:11:37.010783 RptOrder.go:714: Elapsed===> 6.187988ms
+2020/02/19 12:11:37.010878 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:11:37.030048 Common.go:98: ========》 [initPdf]
+2020/02/19 12:11:37.030120 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:11:37.030144 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:11:37.030173 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:11:37.030192 Common.go:102: 《======== [initPdf]
+2020/02/19 12:11:37.030224 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:37.030309 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:37.030362 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:37.030502 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:37.030719 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:11:37.046683 Rpt.go:215: <nil>
+2020/02/19 12:11:37.046734 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:11:37.051581 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:11:37.051639 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:11:37.051662 RptOrder.go:970: Elapsed===> 4.931544ms
+2020/02/19 12:11:37.051800 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:11:37.865298 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:11:37.865511 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:11:37.865582 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:11:37.868297 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:37.868358 RptApp.go:301: Elapsed===> 2.78075ms
+2020/02/19 12:11:37.868393 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:11:37.868423 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:11:37.870493 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:37.870552 RptTmpl.go:289: Elapsed===> 2.131381ms
+2020/02/19 12:11:37.870674 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:11:37.876332 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:11:37.886263 RptOrder.go:707: Insert ===> LastInsertId: 29
+2020/02/19 12:11:37.886327 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:11:37.886358 RptOrder.go:714: Elapsed===> 10.542627ms
+2020/02/19 12:11:37.886415 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:11:37.907302 Common.go:98: ========》 [initPdf]
+2020/02/19 12:11:37.907404 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:11:37.907426 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:11:37.907441 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:11:37.907456 Common.go:102: 《======== [initPdf]
+2020/02/19 12:11:37.907491 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:37.907575 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:37.907671 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:37.907855 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:37.908121 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:11:37.933276 Rpt.go:215: <nil>
+2020/02/19 12:11:37.933378 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:11:37.938204 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:11:37.938353 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:11:37.938388 RptOrder.go:970: Elapsed===> 5.031938ms
+2020/02/19 12:11:37.938508 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:11:39.867385 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:11:39.867565 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:11:39.867606 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:11:39.872759 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:39.872819 RptApp.go:301: Elapsed===> 5.221726ms
+2020/02/19 12:11:39.872849 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:11:39.872888 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:11:39.875371 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:11:39.875442 RptTmpl.go:289: Elapsed===> 2.56453ms
+2020/02/19 12:11:39.875589 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:11:39.876786 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:11:39.887068 RptOrder.go:707: Insert ===> LastInsertId: 30
+2020/02/19 12:11:39.887139 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:11:39.887174 RptOrder.go:714: Elapsed===> 10.396489ms
+2020/02/19 12:11:39.887284 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:11:39.902033 Common.go:98: ========》 [initPdf]
+2020/02/19 12:11:39.902110 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:11:39.902170 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:11:39.902210 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:11:39.902232 Common.go:102: 《======== [initPdf]
+2020/02/19 12:11:39.902267 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:39.902362 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:39.902416 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:11:39.902527 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:11:39.902673 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:11:39.919209 Rpt.go:215: <nil>
+2020/02/19 12:11:39.919309 RptOrder.go:942: Update ===> Update rpt_order set err_msg=?,file_url=?,err_code=? where rpt_no=?
+2020/02/19 12:11:39.922503 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:11:39.922559 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:11:39.922846 RptOrder.go:970: Elapsed===> 3.563704ms
+2020/02/19 12:11:39.923033 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:12:52.513310 main.go:37: config file == config-ci.json
+2020/02/19 12:12:52.518987 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:12:52.519193 main.go:54: Listen Service start...
+2020/02/19 12:12:52.519303 main.go:63: listen:
+2020/02/19 12:12:56.234087 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:12:56.234639 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:12:56.234725 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:12:56.256579 RptApp.go:299: Elapsed===> {0xc000174000 1 0 []}
+2020/02/19 12:12:56.256647 RptApp.go:301: Elapsed===> 21.939413ms
+2020/02/19 12:12:56.256709 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:12:56.256817 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:12:56.274138 RptTmpl.go:287: Elapsed===> {0xc000174000 1 0 []}
+2020/02/19 12:12:56.274225 RptTmpl.go:289: Elapsed===> 17.452376ms
+2020/02/19 12:12:56.274496 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:12:56.276926 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:12:56.281079 RptOrder.go:707: Insert ===> LastInsertId: 31
+2020/02/19 12:12:56.281130 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:12:56.281154 RptOrder.go:714: Elapsed===> 4.256168ms
+2020/02/19 12:12:56.281231 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:12:56.298817 Common.go:98: ========》 [initPdf]
+2020/02/19 12:12:56.298919 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:12:56.298945 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:12:56.298957 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:12:56.298967 Common.go:102: 《======== [initPdf]
+2020/02/19 12:12:56.298995 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:12:56.299121 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:12:56.299173 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:12:56.299309 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:12:56.299424 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:12:56.318772 Rpt.go:215: <nil>
+2020/02/19 12:12:56.318884 RptOrder.go:942: Update ===> Update rpt_order set file_url=?,err_code=?,err_msg=? where rpt_no=?
+2020/02/19 12:12:56.323574 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:12:56.323634 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:12:56.323659 RptOrder.go:970: Elapsed===> 4.778135ms
+2020/02/19 12:12:56.323829 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:47:34.189574 main.go:37: config file == config-ci.json
+2020/02/19 12:47:34.191007 dbcomm.go:23: Ping database error: dial tcp 127.0.0.1:3306: connect: connection refused
+2020/02/19 12:47:34.191092 main.go:54: Listen Service start...
+2020/02/19 12:47:34.191130 main.go:63: listen:
+2020/02/19 12:47:43.661996 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:47:43.662535 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:47:43.662626 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:47:43.663060 RptApp.go:284: Error  ===> dial tcp 127.0.0.1:3306: connect: connection refused
+2020/02/19 12:47:43.663115 Rpt.go:607: Query AppNo  Error: 3000
+2020/02/19 12:48:29.440602 main.go:37: config file == config-ci.json
+2020/02/19 12:48:29.456798 dbcomm.go:23: Ping database error: driver: bad connection
+2020/02/19 12:48:29.456882 main.go:54: Listen Service start...
+2020/02/19 12:48:29.456947 main.go:63: listen:
+2020/02/19 12:48:35.245602 main.go:37: config file == config-ci.json
+2020/02/19 12:48:36.316236 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:48:36.316378 main.go:54: Listen Service start...
+2020/02/19 12:48:36.316468 main.go:63: listen:
+2020/02/19 12:48:41.675682 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:48:41.685025 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:48:41.685146 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:48:41.756835 RptApp.go:299: Elapsed===> {0xc00017c000 1 0 []}
+2020/02/19 12:48:41.756918 RptApp.go:301: Elapsed===> 71.792571ms
+2020/02/19 12:48:41.756990 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:48:41.757080 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:48:41.763411 RptTmpl.go:287: Elapsed===> {0xc00017c000 1 0 []}
+2020/02/19 12:48:41.763466 RptTmpl.go:289: Elapsed===> 6.434993ms
+2020/02/19 12:48:41.763832 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:48:41.773009 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:48:41.783337 RptOrder.go:707: Insert ===> LastInsertId: 32
+2020/02/19 12:48:41.783447 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:48:41.783491 RptOrder.go:714: Elapsed===> 10.508504ms
+2020/02/19 12:48:41.783602 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:48:41.804081 Common.go:98: ========》 [initPdf]
+2020/02/19 12:48:41.804139 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:48:41.804154 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:48:41.804164 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:48:41.804173 Common.go:102: 《======== [initPdf]
+2020/02/19 12:48:41.804198 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:48:41.804308 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:48:41.804359 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:48:41.804496 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:48:41.804612 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:48:41.816406 Rpt.go:215: <nil>
+2020/02/19 12:48:41.816459 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:48:41.820843 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:48:41.820905 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:48:41.820931 RptOrder.go:970: Elapsed===> 4.475227ms
+2020/02/19 12:48:41.821101 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:50:40.300919 main.go:37: config file == config-ci.json
+2020/02/19 12:50:40.308999 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:50:40.309105 main.go:54: Listen Service start...
+2020/02/19 12:50:40.309155 main.go:63: listen:
+2020/02/19 12:50:43.909243 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:50:43.909807 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:50:43.909911 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:50:43.935305 RptApp.go:299: Elapsed===> {0xc000174000 1 0 []}
+2020/02/19 12:50:43.935448 RptApp.go:301: Elapsed===> 25.554852ms
+2020/02/19 12:50:43.935527 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:50:43.935605 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:50:43.940437 RptTmpl.go:287: Elapsed===> {0xc000174000 1 0 []}
+2020/02/19 12:50:43.940545 RptTmpl.go:289: Elapsed===> 4.973233ms
+2020/02/19 12:50:43.941024 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:50:43.947213 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:50:43.950941 RptOrder.go:707: Insert ===> LastInsertId: 33
+2020/02/19 12:50:43.951010 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:50:43.951038 RptOrder.go:714: Elapsed===> 3.85352ms
+2020/02/19 12:50:43.951095 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:50:43.970097 Common.go:98: ========》 [initPdf]
+2020/02/19 12:50:43.970166 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:50:43.970223 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:50:43.970253 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:50:43.970279 Common.go:102: 《======== [initPdf]
+2020/02/19 12:50:43.970336 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:50:43.970498 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:50:43.970591 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:50:43.970824 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:50:43.971037 Rpt.go:203: Draw a table... [30 30 20 40 70]
+2020/02/19 12:50:43.993978 Rpt.go:215: <nil>
+2020/02/19 12:50:43.994062 RptOrder.go:942: Update ===> Update rpt_order set err_msg=?,file_url=?,err_code=? where rpt_no=?
+2020/02/19 12:50:43.997382 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:50:43.997456 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:50:43.997485 RptOrder.go:970: Elapsed===> 3.426935ms
+2020/02/19 12:50:43.997704 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:51:44.612170 main.go:37: config file == config-ci.json
+2020/02/19 12:51:44.621339 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:51:44.621417 main.go:54: Listen Service start...
+2020/02/19 12:51:44.621482 main.go:63: listen:
+2020/02/19 12:51:47.255858 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:51:47.256385 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:51:47.256463 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:51:47.283893 RptApp.go:299: Elapsed===> {0xc000184000 1 0 []}
+2020/02/19 12:51:47.284013 RptApp.go:301: Elapsed===> 27.563999ms
+2020/02/19 12:51:47.284090 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:51:47.284150 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:51:47.296381 RptTmpl.go:287: Elapsed===> {0xc000184000 1 0 []}
+2020/02/19 12:51:47.296481 RptTmpl.go:289: Elapsed===> 12.335939ms
+2020/02/19 12:51:47.296879 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:51:47.308138 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:51:47.322435 RptOrder.go:707: Insert ===> LastInsertId: 34
+2020/02/19 12:51:47.322553 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:51:47.322591 RptOrder.go:714: Elapsed===> 14.509707ms
+2020/02/19 12:51:47.322704 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:51:47.341507 Common.go:98: ========》 [initPdf]
+2020/02/19 12:51:47.341571 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:51:47.341621 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:51:47.341684 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:51:47.341719 Common.go:102: 《======== [initPdf]
+2020/02/19 12:51:47.341755 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:51:47.341885 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:51:47.341944 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:51:47.342087 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:51:47.342224 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:51:47.363630 Rpt.go:215: <nil>
+2020/02/19 12:51:47.363731 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:51:47.371110 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:51:47.371199 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:51:47.371236 RptOrder.go:970: Elapsed===> 7.511723ms
+2020/02/19 12:51:47.371461 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:52:35.907637 main.go:37: config file == config-ci.json
+2020/02/19 12:52:35.915086 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:52:35.915639 main.go:54: Listen Service start...
+2020/02/19 12:52:35.915807 main.go:63: listen:
+2020/02/19 12:52:38.492985 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:52:38.499701 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:52:38.499997 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:52:38.520501 RptApp.go:299: Elapsed===> {0xc00010c0c0 1 0 []}
+2020/02/19 12:52:38.520692 RptApp.go:301: Elapsed===> 20.71681ms
+2020/02/19 12:52:38.520824 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:52:38.521003 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:52:38.539732 RptTmpl.go:287: Elapsed===> {0xc00010c0c0 1 0 []}
+2020/02/19 12:52:38.539826 RptTmpl.go:289: Elapsed===> 18.864604ms
+2020/02/19 12:52:38.540238 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:52:38.550723 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:52:38.574451 RptOrder.go:707: Insert ===> LastInsertId: 35
+2020/02/19 12:52:38.574518 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:52:38.574551 RptOrder.go:714: Elapsed===> 23.875514ms
+2020/02/19 12:52:38.574606 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:52:38.593331 Common.go:98: ========》 [initPdf]
+2020/02/19 12:52:38.593430 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:52:38.593470 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:52:38.593497 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:52:38.593523 Common.go:102: 《======== [initPdf]
+2020/02/19 12:52:38.593570 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:52:38.593782 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:52:38.593902 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:52:38.594139 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:52:38.594277 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:52:38.622658 Rpt.go:215: <nil>
+2020/02/19 12:52:38.622747 RptOrder.go:942: Update ===> Update rpt_order set file_url=?,err_code=?,err_msg=? where rpt_no=?
+2020/02/19 12:52:38.627766 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:52:38.627849 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:52:38.627891 RptOrder.go:970: Elapsed===> 5.150727ms
+2020/02/19 12:52:38.628079 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:55:38.445838 main.go:37: config file == config-ci.json
+2020/02/19 12:55:38.452163 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:55:38.452378 main.go:54: Listen Service start...
+2020/02/19 12:55:38.452465 main.go:63: listen:
+2020/02/19 12:55:41.753482 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:55:41.754055 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:55:41.754162 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:55:41.777001 RptApp.go:299: Elapsed===> {0xc0001180c0 1 0 []}
+2020/02/19 12:55:41.777098 RptApp.go:301: Elapsed===> 22.956816ms
+2020/02/19 12:55:41.777183 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:55:41.777302 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:55:41.796696 RptTmpl.go:287: Elapsed===> {0xc0001180c0 1 0 []}
+2020/02/19 12:55:41.796775 RptTmpl.go:289: Elapsed===> 19.510508ms
+2020/02/19 12:55:41.797086 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:55:41.801059 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:55:41.805218 RptOrder.go:707: Insert ===> LastInsertId: 36
+2020/02/19 12:55:41.805292 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:55:41.805326 RptOrder.go:714: Elapsed===> 4.354495ms
+2020/02/19 12:55:41.805413 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:55:41.828671 Common.go:98: ========》 [initPdf]
+2020/02/19 12:55:41.828761 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:55:41.828782 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:55:41.828796 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:55:41.828809 Common.go:102: 《======== [initPdf]
+2020/02/19 12:55:41.828838 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:55:41.828974 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:55:41.829877 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:55:41.830107 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:55:41.830347 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:55:41.857501 Rpt.go:215: <nil>
+2020/02/19 12:55:41.857640 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:55:41.861332 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:55:41.861422 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:55:41.861481 RptOrder.go:970: Elapsed===> 3.83938ms
+2020/02/19 12:55:41.861622 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:57:04.263172 main.go:37: config file == config-ci.json
+2020/02/19 12:57:04.268858 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:57:04.268997 main.go:54: Listen Service start...
+2020/02/19 12:57:04.269042 main.go:63: listen:
+2020/02/19 12:57:06.694818 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:57:06.732920 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:57:06.733044 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:57:06.743524 RptApp.go:299: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:57:06.743610 RptApp.go:301: Elapsed===> 10.591794ms
+2020/02/19 12:57:06.743661 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:57:06.743705 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:57:06.752245 RptTmpl.go:287: Elapsed===> {0xc00017e000 1 0 []}
+2020/02/19 12:57:06.752321 RptTmpl.go:289: Elapsed===> 8.621489ms
+2020/02/19 12:57:06.752743 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:57:06.757124 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:57:06.760358 RptOrder.go:707: Insert ===> LastInsertId: 37
+2020/02/19 12:57:06.760442 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:57:06.760494 RptOrder.go:714: Elapsed===> 3.409925ms
+2020/02/19 12:57:06.760582 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:57:06.775705 Common.go:98: ========》 [initPdf]
+2020/02/19 12:57:06.775777 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:57:06.775797 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:57:06.775824 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:57:06.775842 Common.go:102: 《======== [initPdf]
+2020/02/19 12:57:06.775876 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:57:06.776022 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:57:06.776096 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:57:06.776277 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:57:06.776480 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:57:06.787070 Rpt.go:215: <nil>
+2020/02/19 12:57:06.787142 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:57:06.789727 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:57:06.789795 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:57:06.789822 RptOrder.go:970: Elapsed===> 2.684257ms
+2020/02/19 12:57:06.789966 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:57:31.707283 main.go:37: config file == config-ci.json
+2020/02/19 12:57:31.713059 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:57:31.713171 main.go:54: Listen Service start...
+2020/02/19 12:57:31.713250 main.go:63: listen:
+2020/02/19 12:57:33.548170 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:57:33.548717 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:57:33.548808 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:57:33.557251 RptApp.go:299: Elapsed===> {0xc0001260c0 1 0 []}
+2020/02/19 12:57:33.557347 RptApp.go:301: Elapsed===> 8.556104ms
+2020/02/19 12:57:33.557448 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:57:33.557550 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:57:33.565228 RptTmpl.go:287: Elapsed===> {0xc0001260c0 1 0 []}
+2020/02/19 12:57:33.565324 RptTmpl.go:289: Elapsed===> 7.808562ms
+2020/02/19 12:57:33.565764 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:57:33.571419 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:57:33.573840 RptOrder.go:707: Insert ===> LastInsertId: 38
+2020/02/19 12:57:33.573905 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:57:33.573940 RptOrder.go:714: Elapsed===> 2.55149ms
+2020/02/19 12:57:33.573999 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:57:33.593675 Common.go:98: ========》 [initPdf]
+2020/02/19 12:57:33.593835 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:57:33.593877 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:57:33.593909 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:57:33.593938 Common.go:102: 《======== [initPdf]
+2020/02/19 12:57:33.593989 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:57:33.594147 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:57:33.594255 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:57:33.594456 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:57:33.594743 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:57:33.594811 Rpt.go:223: ================> [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:57:33.638452 Rpt.go:215: <nil>
+2020/02/19 12:57:33.638749 RptOrder.go:942: Update ===> Update rpt_order set err_msg=?,file_url=?,err_code=? where rpt_no=?
+2020/02/19 12:57:33.643583 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:57:33.643660 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:57:33.643694 RptOrder.go:970: Elapsed===> 4.951422ms
+2020/02/19 12:57:33.643939 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:58:02.542190 main.go:37: config file == config-ci.json
+2020/02/19 12:58:02.548532 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:58:02.548785 main.go:54: Listen Service start...
+2020/02/19 12:58:02.548826 main.go:63: listen:
+2020/02/19 12:58:05.108859 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:58:05.109356 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:58:05.109456 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:58:05.148760 RptApp.go:299: Elapsed===> {0xc000164000 1 0 []}
+2020/02/19 12:58:05.148873 RptApp.go:301: Elapsed===> 39.434435ms
+2020/02/19 12:58:05.148929 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:58:05.148988 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:58:05.152500 RptTmpl.go:287: Elapsed===> {0xc000164000 1 0 []}
+2020/02/19 12:58:05.152576 RptTmpl.go:289: Elapsed===> 3.611625ms
+2020/02/19 12:58:05.152926 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:58:05.160278 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:58:05.176511 RptOrder.go:707: Insert ===> LastInsertId: 39
+2020/02/19 12:58:05.176618 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:58:05.176663 RptOrder.go:714: Elapsed===> 16.420179ms
+2020/02/19 12:58:05.176759 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:58:05.197188 Common.go:98: ========》 [initPdf]
+2020/02/19 12:58:05.197322 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:58:05.197343 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:58:05.197367 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:58:05.197383 Common.go:102: 《======== [initPdf]
+2020/02/19 12:58:05.197412 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:58:05.197513 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:58:05.197564 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:58:05.197706 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:58:05.197836 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:58:05.209560 Rpt.go:215: <nil>
+2020/02/19 12:58:05.209641 RptOrder.go:942: Update ===> Update rpt_order set err_msg=?,file_url=?,err_code=? where rpt_no=?
+2020/02/19 12:58:05.213314 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:58:05.213382 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:58:05.213416 RptOrder.go:970: Elapsed===> 3.778643ms
+2020/02/19 12:58:05.213557 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 12:59:13.994618 main.go:37: config file == config-ci.json
+2020/02/19 12:59:14.003725 dbcomm.go:29: Database Connected successful!
+2020/02/19 12:59:14.003803 main.go:54: Listen Service start...
+2020/02/19 12:59:14.003876 main.go:63: listen:
+2020/02/19 12:59:16.141238 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 12:59:16.141757 Common.go:98: ========》 [QryAgrt]
+2020/02/19 12:59:16.141843 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 12:59:16.178288 RptApp.go:299: Elapsed===> {0xc00017a000 1 0 []}
+2020/02/19 12:59:16.178379 RptApp.go:301: Elapsed===> 36.554375ms
+2020/02/19 12:59:16.178436 Common.go:98: ========》 [qryTmpl]
+2020/02/19 12:59:16.178521 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 12:59:16.181496 RptTmpl.go:287: Elapsed===> {0xc00017a000 1 0 []}
+2020/02/19 12:59:16.181566 RptTmpl.go:289: Elapsed===> 3.052632ms
+2020/02/19 12:59:16.182019 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 12:59:16.184647 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 12:59:16.192534 RptOrder.go:707: Insert ===> LastInsertId: 40
+2020/02/19 12:59:16.192607 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 12:59:16.192644 RptOrder.go:714: Elapsed===> 8.028126ms
+2020/02/19 12:59:16.192706 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 12:59:16.219153 Common.go:98: ========》 [initPdf]
+2020/02/19 12:59:16.219257 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 12:59:16.219292 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 12:59:16.219318 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 12:59:16.219350 Common.go:102: 《======== [initPdf]
+2020/02/19 12:59:16.219396 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:59:16.219554 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:59:16.219643 Common.go:98: ========》 [parserTmpl]
+2020/02/19 12:59:16.219820 Common.go:102: 《======== [parserTmpl]
+2020/02/19 12:59:16.220030 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 12:59:16.220064 Rpt.go:239: 表格合计长度不能为%d 190
+2020/02/19 12:59:16.249599 Rpt.go:215: <nil>
+2020/02/19 12:59:16.249847 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 12:59:16.253745 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 12:59:16.253820 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 12:59:16.253853 RptOrder.go:970: Elapsed===> 4.04085ms
+2020/02/19 12:59:16.254095 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 13:00:17.124705 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 13:00:17.132825 Common.go:98: ========》 [QryAgrt]
+2020/02/19 13:00:17.132928 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 13:00:17.146821 RptApp.go:299: Elapsed===> {0xc00017a000 1 0 []}
+2020/02/19 13:00:17.146899 RptApp.go:301: Elapsed===> 13.977244ms
+2020/02/19 13:00:17.146988 Common.go:98: ========》 [qryTmpl]
+2020/02/19 13:00:17.147049 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 13:00:17.153487 RptTmpl.go:287: Elapsed===> {0xc00017a000 1 0 []}
+2020/02/19 13:00:17.153564 RptTmpl.go:289: Elapsed===> 6.530244ms
+2020/02/19 13:00:17.153754 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 13:00:17.165298 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 13:00:17.170791 RptOrder.go:707: Insert ===> LastInsertId: 41
+2020/02/19 13:00:17.170943 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 13:00:17.171100 RptOrder.go:714: Elapsed===> 5.818282ms
+2020/02/19 13:00:17.171327 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 13:00:17.192207 Common.go:98: ========》 [initPdf]
+2020/02/19 13:00:17.192309 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 13:00:17.192350 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 13:00:17.192381 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 13:00:17.192409 Common.go:102: 《======== [initPdf]
+2020/02/19 13:00:17.192451 Common.go:98: ========》 [parserTmpl]
+2020/02/19 13:00:17.192575 Common.go:102: 《======== [parserTmpl]
+2020/02/19 13:00:17.192668 Common.go:98: ========》 [parserTmpl]
+2020/02/19 13:00:17.192802 Common.go:102: 《======== [parserTmpl]
+2020/02/19 13:00:17.193036 Rpt.go:203: Draw a table... [30 30 20 40 69] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 13:00:17.193074 Rpt.go:245: 0
+2020/02/19 13:00:17.193206 Rpt.go:245: 1
+2020/02/19 13:00:17.193288 Rpt.go:245: 2
+2020/02/19 13:00:17.217948 Rpt.go:215: <nil>
+2020/02/19 13:00:17.218005 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 13:00:17.223612 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 13:00:17.223700 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 13:00:17.223740 RptOrder.go:970: Elapsed===> 5.738549ms
+2020/02/19 13:00:17.223918 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 13:00:33.870443 Common.go:98: ========》 [QryRptFile]
+2020/02/19 13:00:33.870572 Common.go:98: ========》 [QryAgrt]
+2020/02/19 13:00:33.870617 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 13:00:33.883025 RptApp.go:299: Elapsed===> {0xc00017a000 1 0 []}
+2020/02/19 13:00:33.883106 RptApp.go:301: Elapsed===> 12.489935ms
+2020/02/19 13:00:33.883168 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582088417165208000' and app_no='0001' 
+2020/02/19 13:00:33.889617 RptOrder.go:318: Elapsed===> {0xc00017a000 1 0 []}
+2020/02/19 13:00:33.889685 RptOrder.go:320: Elapsed===> 6.51956ms
+2020/02/19 13:00:33.889723 Rpt.go:736: /tmp/pdfile/pdf_1582088417193511000.pdf
+2020/02/19 13:00:33.890408 Common.go:102: 《======== [QryRptFile]
+2020/02/19 13:02:09.053690 main.go:37: config file == config-ci.json
+2020/02/19 13:02:09.062429 dbcomm.go:29: Database Connected successful!
+2020/02/19 13:02:09.062625 main.go:54: Listen Service start...
+2020/02/19 13:02:09.062718 main.go:63: listen:
+2020/02/19 13:02:12.341171 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 13:02:12.341703 Common.go:98: ========》 [QryAgrt]
+2020/02/19 13:02:12.341811 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 13:02:12.353672 RptApp.go:299: Elapsed===> {0xc000156000 1 0 []}
+2020/02/19 13:02:12.353757 RptApp.go:301: Elapsed===> 11.979874ms
+2020/02/19 13:02:12.355162 Common.go:98: ========》 [qryTmpl]
+2020/02/19 13:02:12.355439 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 13:02:12.362070 RptTmpl.go:287: Elapsed===> {0xc000156000 1 0 []}
+2020/02/19 13:02:12.362152 RptTmpl.go:289: Elapsed===> 6.828016ms
+2020/02/19 13:02:12.362712 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='0000000001' and app_no='0001' 
+2020/02/19 13:02:12.384514 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 13:02:12.390750 RptOrder.go:707: Insert ===> LastInsertId: 42
+2020/02/19 13:02:12.390848 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 13:02:12.390885 RptOrder.go:714: Elapsed===> 6.458298ms
+2020/02/19 13:02:12.390950 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 13:02:12.418495 Common.go:98: ========》 [initPdf]
+2020/02/19 13:02:12.418569 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 13:02:12.418589 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 13:02:12.418638 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 13:02:12.418673 Common.go:102: 《======== [initPdf]
+2020/02/19 13:02:12.418705 Common.go:98: ========》 [parserTmpl]
+2020/02/19 13:02:12.418820 Common.go:102: 《======== [parserTmpl]
+2020/02/19 13:02:12.418888 Common.go:98: ========》 [parserTmpl]
+2020/02/19 13:02:12.419070 Common.go:102: 《======== [parserTmpl]
+2020/02/19 13:02:12.419221 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 13:02:12.432646 Rpt.go:215: <nil>
+2020/02/19 13:02:12.432747 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 13:02:12.437492 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 13:02:12.437585 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 13:02:12.437639 RptOrder.go:970: Elapsed===> 4.885421ms
+2020/02/19 13:02:12.437841 Common.go:102: 《======== [CrtRptFile]
+2020/02/19 13:02:18.309137 Common.go:98: ========》 [QryRptFile]
+2020/02/19 13:02:18.309273 Common.go:98: ========》 [QryAgrt]
+2020/02/19 13:02:18.309321 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 13:02:18.320070 RptApp.go:299: Elapsed===> {0xc000156000 1 0 []}
+2020/02/19 13:02:18.320166 RptApp.go:301: Elapsed===> 10.853675ms
+2020/02/19 13:02:18.320263 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='A1582088532384316000' and app_no='0001' 
+2020/02/19 13:02:18.324200 RptOrder.go:318: Elapsed===> {0xc000156000 1 0 []}
+2020/02/19 13:02:18.325138 RptOrder.go:320: Elapsed===> 4.879ms
+2020/02/19 13:02:18.325447 Rpt.go:735: /tmp/pdfile/pdf_1582088532419446000.pdf
+2020/02/19 13:02:18.326901 Common.go:102: 《======== [QryRptFile]
+2020/02/19 13:02:53.081429 Common.go:98: ========》 [CrtRptFile]
+2020/02/19 13:02:53.082696 Common.go:98: ========》 [QryAgrt]
+2020/02/19 13:02:53.088872 RptApp.go:280: Select ===> Select id,app_no,app_name,app_key,app_ip,back_url,status,start_date,expire_date,insert_date,udpate_date,version from rpt_app where 1=1  and app_no='0001' and status='E' 
+2020/02/19 13:02:53.104164 RptApp.go:299: Elapsed===> {0xc000156000 1 0 []}
+2020/02/19 13:02:53.104255 RptApp.go:301: Elapsed===> 15.403377ms
+2020/02/19 13:02:53.104351 Common.go:98: ========》 [qryTmpl]
+2020/02/19 13:02:53.104400 RptTmpl.go:268: Select ===> Select id,tmpl_no,tmpl_name,tmpl_type,content,status,start_date,expire_date,update_date,insert_date,version from rpt_tmpl where 1=1  and tmpl_no='A001' and status='E' 
+2020/02/19 13:02:53.111705 RptTmpl.go:287: Elapsed===> {0xc000156000 1 0 []}
+2020/02/19 13:02:53.111791 RptTmpl.go:289: Elapsed===> 7.391828ms
+2020/02/19 13:02:53.111962 RptOrder.go:299: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and rpt_no='12321323213213123213' and app_no='0001' 
+2020/02/19 13:02:53.123643 RptOrder.go:685: Insert ===> Insert into  rpt_order(rpt_no,app_no,app_req_no,tmpl_no,status,base_info,table_info,chart_info,insert_date,version)  values(?,?,?,?,?,?,?,?,?,?)
+2020/02/19 13:02:53.144039 RptOrder.go:707: Insert ===> LastInsertId: 43
+2020/02/19 13:02:53.144192 RptOrder.go:710: Insert ===> RowsAffected: 1
+2020/02/19 13:02:53.144235 RptOrder.go:714: Elapsed===> 20.612988ms
+2020/02/19 13:02:53.144303 Common.go:98: ========》 [CrtPdfByTmpl]
+2020/02/19 13:02:53.162910 Common.go:98: ========》 [initPdf]
+2020/02/19 13:02:53.162999 Rpt.go:173: pageWidthAll,pageHeightAll==> 210.00155555555557 297.00008333333335
+2020/02/19 13:02:53.163032 Rpt.go:174: pageWidth,pageHeight==> 189.99905555555557 266.9963333333333
+2020/02/19 13:02:53.163055 Rpt.go:175: ltrb==> 10.00125 10.00125 10.00125 20.0025
+2020/02/19 13:02:53.163078 Common.go:102: 《======== [initPdf]
+2020/02/19 13:02:53.163115 Common.go:98: ========》 [parserTmpl]
+2020/02/19 13:02:53.163202 Common.go:102: 《======== [parserTmpl]
+2020/02/19 13:02:53.163293 Common.go:98: ========》 [parserTmpl]
+2020/02/19 13:02:53.163431 Common.go:102: 《======== [parserTmpl]
+2020/02/19 13:02:53.163612 Rpt.go:203: Draw a table... [30 30 20 40 70] [[{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}] [{user_name 姓名 张明} {birthday 出生日期 2019-11-12} {age 年龄 45} {id_no 证件号码 4102002002020202222} {addr 地址 广州是花都区12栋-102}]]
+2020/02/19 13:02:53.197002 Rpt.go:215: <nil>
+2020/02/19 13:02:53.197079 RptOrder.go:942: Update ===> Update rpt_order set err_code=?,err_msg=?,file_url=? where rpt_no=?
+2020/02/19 13:02:53.201928 RptOrder.go:964: Update ===> LastInsertId: 0
+2020/02/19 13:02:53.202010 RptOrder.go:967: Update ===> RowsAffected: 1
+2020/02/19 13:02:53.202086 RptOrder.go:970: Elapsed===> 5.017172ms
+2020/02/19 13:02:53.202224 Common.go:102: 《======== [CrtRptFile]
