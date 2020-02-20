@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestCrtPdf(t *testing.T) {
+func TestDrawChart(t *testing.T) {
 
-	CrtPdf()
+	DrawChart()
 }

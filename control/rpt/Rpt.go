@@ -14,6 +14,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+
 	"os"
 	"strings"
 	"time"
@@ -205,7 +206,7 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 		}
 
 		if v.Chart != common.EMPTY_STRING {
-
+			drawChart(pdf)
 		}
 	}
 
@@ -232,12 +233,12 @@ func drawDTable(pdf *gofpdf.Fpdf, colLens []float64, titleSize float64, dataSize
 		totalLen += v
 	}
 	if totalLen == 0 {
-		log.Println("表格合计长度不能为%d", totalLen)
-		return fmt.Errorf("表格合计长度不能为%d", totalLen)
+		log.Println("表格合计长度不能为", totalLen)
+		return fmt.Errorf("表格合计长度不能为%f", totalLen)
 	}
 	if totalLen > pageWidth+1 {
 		log.Println("表格合计长度不能为", totalLen)
-		return fmt.Errorf("表格合计长度%d长度大于pageWidth", totalLen)
+		return fmt.Errorf("表格合计长度%f长度大于pageWidth", totalLen)
 	}
 	fill := false
 
@@ -326,12 +327,8 @@ func randInt() []int {
 	return r
 }
 
-func getZWFont() *truetype.Font {
-
-	fontFile := "../../NotoSansSC-Regular.ttf"
-	//fontFile := "/Library/Fonts/AppleMyungjo.ttf"
-
-	// 读字体数据
+func getCustFont() *truetype.Font {
+	fontFile := "./NotoSansSC-Regular.ttf"
 	fontBytes, err := ioutil.ReadFile(fontFile)
 	if err != nil {
 		log.Println(err)
@@ -346,32 +343,31 @@ func getZWFont() *truetype.Font {
 }
 
 func drawChart(pdf *gofpdf.Fpdf) {
-	//	f := getZWFont() // 用自己的字体
-	graph := chart.BarChart{
-		Title: "Test Bar Chart",
+	custFont := getCustFont()
+	pie := chart.PieChart{
+		Title:      "信用分布情况",
+		TitleStyle: chart.StyleShow(),
 		Background: chart.Style{
 			Padding: chart.Box{
-				Top: 10,
+				Top: 35,
 			},
 		},
-		Height:   300,
-		BarWidth: 300,
-		Bars: []chart.Value{
-			{Value: 5.25, Label: "Blue"},
-			{Value: 4.88, Label: "Green"},
-			{Value: 4.74, Label: "Gray"},
-			{Value: 3.22, Label: "Orange"},
-			{Value: 3, Label: "Test"},
-			{Value: 2.27, Label: "??"},
-			{Value: 10, Label: "!!"},
+		Font:   custFont,
+		Width:  512,
+		Height: 590,
+		Values: []chart.Value{
+			{Value: 40, Label: "信用低"},
+			{Value: 30, Label: "Two"},
+			{Value: 30, Label: "One"},
+			{Value: 30, Label: "One"},
 		},
 	}
 
-	ff, _ := os.Create("output.png")
-	defer ff.Close()
-	graph.Render(chart.PNG, ff)
-	pdf.Ln(-1)
-	pdf.Image("./output.png", 10, pdf.GetY(), 170, 40, true, "", 0, "http://www.fpdf.org")
+	f, _ := os.Create("output11.png")
+	defer f.Close()
+	pie.Render(chart.PNG, f)
+
+	pdf.Image("./output11.png", 40, 10, 80, 100, true, "", 0, "http://www.crfchina.com")
 
 }
 

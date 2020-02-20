@@ -14,5 +14,6 @@ require (
 	github.com/pantsing/goconf v0.0.0-20150322095841-9d780c39300f
 	github.com/rogpeppe/go-internal v1.5.2 // indirect
 	github.com/wcharczuk/go-chart v2.0.1+incompatible
+	golang.org/x/image v0.0.0-20200119044424-58c23975cae1 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 )
