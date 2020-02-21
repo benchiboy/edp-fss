@@ -91,29 +91,29 @@ type ChartData struct {
   创建报告
 */
 type CrtRptReq struct {
-	AppNo    string                  `json:"app_no"`
-	AppReqNo string                  `json:"app_req_no"`
-	TmplNo   string                  `json:"tmpl_no"`
-	BaseMap  map[string]string       `json:"base_info"`
-	TableMap map[string][][]CellData `json:"table_info"`
-	ChartMap map[string]ChartData    `json:"chart_info"`
+	AppNo    string                  `json:"systemNo"`
+	AppReqNo string                  `json:"requestRefNo"`
+	TmplNo   string                  `json:"templateNo"`
+	BaseMap  map[string]string       `json:"baseInfo"`
+	TableMap map[string][][]CellData `json:"tableInfo"`
+	ChartMap map[string]ChartData    `json:"chartInfo"`
 }
 
 type CrtRptResp struct {
-	AppReqNo string `json:"app_req_no"`
-	RptNo    string `json:"rpt_no"`
-	ErrCode  string `json:"err_code"`
-	ErrMsg   string `json:"err_msg"`
+	AppReqNo string `json:"requestRefNo"`
+	RptNo    string `json:"reportId"`
+	ErrCode  string `json:"errorCode"`
+	ErrMsg   string `json:"errorMessage"`
 }
 
 /*
   查看协议
 */
 type QryAgrtReq struct {
-	AppNo    string            `json:"app_no"`
-	AppReqNo string            `json:"app_req_no"`
-	TmplNo   string            `json:"tmpl_no"`
-	BaseMap  map[string]string `json:"base_info"`
+	AppNo    string            `json:"systemNo"`
+	AppReqNo string            `json:"requestRefNo"`
+	TmplNo   string            `json:"templateNo"`
+	BaseMap  map[string]string `json:"baseInfo"`
 }
 
 type QryAgrtResp struct {
@@ -124,23 +124,23 @@ type QryAgrtResp struct {
 */
 
 type QryRptStaReq struct {
-	AppNo string `json:"app_no"`
-	RptNo string `json:"rpt_no"`
+	AppNo string `json:"systemNo"`
+	RptNo string `json:"reportId"`
 }
 
 type QryRptStaResp struct {
-	RptNo   string `json:"rpt_no"`
+	RptNo   string `json:"reportId"`
 	Status  string `json:"status"`
-	ErrCode string `json:"err_code"`
-	ErrMsg  string `json:"err_msg"`
+	ErrCode string `json:"errorCode"`
+	ErrMsg  string `json:"errorMessage"`
 }
 
 /*
   查询报告
 */
 type QryRptReq struct {
-	AppNo string `json:"app_no"`
-	RptNo string `json:"rpt_no"`
+	AppNo string `json:"systemNo"`
+	RptNo string `json:"reportId"`
 }
 
 /*
@@ -533,7 +533,7 @@ func QryAgrt(w http.ResponseWriter, req *http.Request) {
 	var qryReq QryAgrtReq
 
 	if req.Method == "GET" {
-		appNo, ok := req.URL.Query()["app_no"]
+		appNo, ok := req.URL.Query()["systemNo"]
 		if !ok || len(appNo) < 1 || appNo[0] == "" {
 			log.Println("URL.Query Json Error:")
 			w.WriteHeader(http.StatusForbidden)
@@ -542,7 +542,7 @@ func QryAgrt(w http.ResponseWriter, req *http.Request) {
 		}
 		qryReq.AppNo = appNo[0]
 
-		tmplNo, ok := req.URL.Query()["tmpl_no"]
+		tmplNo, ok := req.URL.Query()["templateNo"]
 		if !ok || len(appNo) < 1 || appNo[0] == "" {
 			log.Println("URL.Query Json Error:")
 			w.WriteHeader(http.StatusForbidden)
@@ -689,14 +689,14 @@ func QryRptFile(w http.ResponseWriter, req *http.Request) {
 	var qryReq QryRptReq
 
 	if req.Method == "GET" {
-		appNo, ok := req.URL.Query()["app_no"]
+		appNo, ok := req.URL.Query()["systemNo"]
 		if !ok || len(appNo) < 1 || appNo[0] == "" {
 			log.Println("URL.Query Json Error:")
 			w.WriteHeader(http.StatusForbidden)
 			return
 		}
 		qryReq.AppNo = appNo[0]
-		rptNo, ok := req.URL.Query()["rpt_no"]
+		rptNo, ok := req.URL.Query()["reportId"]
 		if !ok || len(appNo) < 1 || appNo[0] == "" {
 			log.Println("URL.Query Json Error:")
 			w.WriteHeader(http.StatusForbidden)

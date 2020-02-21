@@ -1843,3 +1843,33 @@
 2020/02/20 12:26:41.525932 RptOrder.go:320: Elapsed===> 13.510015ms
 2020/02/20 12:26:41.526780 Rpt.go:731: /tmp/pdfile/pdf_1582172796213322000.pdf
 2020/02/20 12:26:41.527986 Common.go:102: 《======== [QryRptFile]
+2020/02/20 19:04:58.394590 main.go:37: config file == config-ci.json
+2020/02/20 19:04:58.400469 dbcomm.go:29: Database Connected successful!
+2020/02/20 19:04:58.400551 main.go:54: Listen Service start...
+2020/02/20 19:04:58.400611 main.go:63: listen:
+2020/02/21 16:57:29.180138 main.go:37: config file == config-ci.json
+2020/02/21 16:57:29.188304 dbcomm.go:29: Database Connected successful!
+2020/02/21 16:57:29.188439 main.go:54: Listen Service start...
+2020/02/21 16:57:29.188506 main.go:63: listen:
+2020/02/21 16:58:13.037182 Common.go:98: ========》 [QryAgrt]
+2020/02/21 16:58:13.037559 Rpt.go:538: URL.Query Json Error:
+2020/02/21 16:58:53.381318 Common.go:98: ========》 [QryAgrt]
+2020/02/21 16:58:53.392432 Common.go:98: ========》 [QryAgrt]
+2020/02/21 16:58:53.392572 RptApp.go:340: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and status='E' 
+2020/02/21 16:58:53.407871 Rpt.go:565: Query AppNo  Error: 3000
+2020/02/21 16:59:06.710108 Common.go:98: ========》 [QryAgrt]
+2020/02/21 16:59:06.710257 Common.go:98: ========》 [QryAgrt]
+2020/02/21 16:59:06.710331 RptApp.go:340: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and status='E' 
+2020/02/21 16:59:06.736172 Rpt.go:565: Query AppNo  Error: 3000
+2020/02/21 19:17:24.622080 main.go:37: config file == config-ci.json
+2020/02/21 19:17:24.625560 dbcomm.go:23: Ping database error: dial tcp 127.0.0.1:3306: connect: connection refused
+2020/02/21 19:17:24.625637 main.go:54: Listen Service start...
+2020/02/21 19:17:24.625671 main.go:63: listen:
+2020/02/21 19:17:41.004306 Common.go:98: ========》 [QryAgrt]
+2020/02/21 19:17:41.014654 Common.go:98: ========》 [QryAgrt]
+2020/02/21 19:17:41.015361 RptApp.go:340: Select ===> Select id,rpt_no,app_no,app_req_no,tmpl_no,tmpl_ver,status,base_info,table_info,chart_info,file_url,rpt_url,err_code,err_msg,insert_date,update_date,version from rpt_order where 1=1  and status='E' 
+2020/02/21 19:17:41.132219 Rpt.go:565: Query AppNo  Error: 3000
+2020/02/21 21:05:39.243558 main.go:37: config file == config-ci.json
+2020/02/21 21:05:39.245468 dbcomm.go:23: Ping database error: dial tcp 127.0.0.1:3306: connect: connection refused
+2020/02/21 21:05:39.245574 main.go:54: Listen Service start...
+2020/02/21 21:05:39.245642 main.go:63: listen:

@@ -1,9 +1,9 @@
 {
 	"config":{
-		"DB_URL": "root:123456@tcp(127.0.0.1:3306)/edp-fss",
+		"DB_URL": "root:123456@tcp(127.0.0.1:3306)/edp_fss",
 		"LISTEN":8000,
 		"OPEN_CONNS":50,
 		"IDLE_CONNS":50,
-		"LISTEN_IP":"127.0.0.1:9080"
+		"LISTEN_IP":"127.0.0.1:8080"
 	}
 }

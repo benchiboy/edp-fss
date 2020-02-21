@@ -5,10 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"strings"
-	"time"
-
-	"github.com/dgrijalva/jwt-go"
 )
 
 const (
@@ -114,84 +110,4 @@ func Write_Response(response interface{}, w http.ResponseWriter, r *http.Request
 	w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 	w.Header().Set("Access-Control-Allow-Headers", "content-type,Action, Module,Authorization")
 	fmt.Fprintf(w, string(json))
-}
-
-/*
-	说明：用户登录成功后，产生SESSION的TOKEN
-	入参：
-	出参：参数1：Token
-		 参数1：Error
-*/
-
-func GetToken(userId string, nickName string) (string, error) {
-	token := jwt.New(jwt.SigningMethodHS256)
-	claims := make(jwt.MapClaims)
-	claims["aud"] = userId
-	claims["exp"] = time.Now().Add(time.Hour * time.Duration(10)).Unix()
-	claims["iat"] = time.Now().Unix()
-	claims["nne"] = nickName
-
-	token.Claims = claims
-	tokenString, err := token.SignedString([]byte(TOKEN_KEY))
-	if err != nil {
-		return EMPTY_STRING, err
-	}
-	return tokenString, nil
-}
-
-/*
-	说明：根据TOKEN 进行校验
-	入参：
-	出参：参数1：Token
-		 参数1：Error
-*/
-
-func CheckToken(w http.ResponseWriter, req *http.Request) (string, string, string, error) {
-	PrintHead("CheckToken")
-	var errResp ErrorResp
-	auth := req.Header.Get("Authorization")
-	var authB64 string
-	auths := strings.SplitN(auth, " ", 2)
-	if len(auths) != 2 {
-		authB64 = auth
-	} else {
-		authB64 = auths[1]
-	}
-	claims := make(jwt.MapClaims)
-	_, err := jwt.ParseWithClaims(authB64, claims, func(*jwt.Token) (interface{}, error) {
-		return []byte(TOKEN_KEY), nil
-	})
-	if err != nil {
-		if err.Error() == "Token is expired" {
-			errResp.ErrCode = ERR_CODE_EXPIRED
-		} else {
-			errResp.ErrCode = ERR_CODE_PARTOEN
-		}
-		errResp.ErrMsg = ERROR_MAP[ERR_CODE_PARTOEN] + err.Error()
-		Write_Response(errResp, w, req)
-		return EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, err
-	}
-	userId, ok := claims["aud"].(string)
-	if !ok {
-		errResp.ErrCode = ERR_CODE_TYPEERR
-		errResp.ErrMsg = ERROR_MAP[ERR_CODE_TYPEERR] + "userid"
-		Write_Response(errResp, w, req)
-		return EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, fmt.Errorf("Assertion Error.")
-	}
-	maxTimes, ok := claims["cnt"].(string)
-	if !ok {
-		errResp.ErrCode = ERR_CODE_TYPEERR
-		errResp.ErrMsg = ERROR_MAP[ERR_CODE_TYPEERR] + "maxTimes"
-		Write_Response(errResp, w, req)
-		return EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, fmt.Errorf("Assertion Error.")
-	}
-	nickName, ok := claims["nne"].(string)
-	if !ok {
-		errResp.ErrCode = ERR_CODE_TYPEERR
-		errResp.ErrMsg = ERROR_MAP[ERR_CODE_TYPEERR] + "nickName"
-		Write_Response(errResp, w, req)
-		return EMPTY_STRING, EMPTY_STRING, EMPTY_STRING, fmt.Errorf("Assertion Error.")
-	}
-
-	return userId, maxTimes, nickName, nil
 }
