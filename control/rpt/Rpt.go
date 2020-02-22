@@ -805,13 +805,14 @@ func QryAgrt(w http.ResponseWriter, req *http.Request) {
 		qryReq.AppNo = appNo[0]
 
 		tmplNo, ok := req.URL.Query()["templateNo"]
-		if !ok || len(appNo) < 1 || appNo[0] == "" {
+		if !ok || len(tmplNo) < 1 || tmplNo[0] == "" {
 			log.Println("URL.Query Json Error:")
 			w.WriteHeader(http.StatusForbidden)
 			return
 
 		}
 		qryReq.TmplNo = tmplNo[0]
+		log.Println(qryReq)
 	} else {
 		err := json.NewDecoder(req.Body).Decode(&qryReq)
 		if err != nil {
@@ -824,7 +825,7 @@ func QryAgrt(w http.ResponseWriter, req *http.Request) {
 
 	var errCode string
 	if errCode, _ = qryApp(qryReq.AppNo); errCode != common.ERR_CODE_SUCCESS {
-		log.Println("Query AppNo  Error:", errCode)
+		log.Println("Query AppNo====>  Error:", errCode)
 		w.WriteHeader(http.StatusForbidden)
 		return
 	}
