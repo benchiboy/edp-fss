@@ -22,6 +22,7 @@ import (
 	"github.com/golang/freetype/truetype"
 	"github.com/jung-kurt/gofpdf"
 	"github.com/wcharczuk/go-chart"
+	"github.com/wcharczuk/go-chart/drawing"
 )
 
 /*
@@ -206,7 +207,7 @@ func CrtPdfByTmpl(pdfTmpl PdfTmpl_Define, baseMap map[string]string, tableMap ma
 		}
 
 		if v.Chart != common.EMPTY_STRING {
-			drawChart(pdf)
+			DrawPieChart(pdf)
 		}
 	}
 
@@ -328,7 +329,7 @@ func randInt() []int {
 }
 
 func getCustFont() *truetype.Font {
-	fontFile := "./NotoSansSC-Regular.ttf"
+	fontFile := "../../NotoSansSC-Regular.ttf"
 	fontBytes, err := ioutil.ReadFile(fontFile)
 	if err != nil {
 		log.Println(err)
@@ -342,7 +343,268 @@ func getCustFont() *truetype.Font {
 	return font
 }
 
-func drawChart(pdf *gofpdf.Fpdf) {
+func releases() []chart.GridLine {
+	return []chart.GridLine{
+		{Value: 1.00},
+		{Value: 2.00},
+	}
+}
+
+func DrawSeriesChart() {
+	custFont := getCustFont()
+
+	graph := chart.Chart{
+		//	Title:      "信用分布情况",
+		Font:       custFont,
+		TitleStyle: chart.StyleShow(),
+
+		Background: chart.Style{
+			Padding: chart.Box{
+				Top: 10,
+				//Left: 10,
+			},
+		},
+
+		XAxis: chart.XAxis{
+			Name:           "hello",
+			NameStyle:      chart.StyleShow(),
+			ValueFormatter: chart.TimeValueFormatter,
+			Style:          chart.StyleShow(),
+			TickStyle: chart.Style{
+				TextRotationDegrees: 0.0,
+			},
+			Ticks: []chart.Tick{
+				{Value: 1.0, Label: "2001年"},
+				{Value: 2.0, Label: "2002年"},
+				{Value: 3.0, Label: "2003年"},
+				{Value: 4.0, Label: "2004年"},
+				{Value: 5.0, Label: "2005年"},
+			},
+			GridMajorStyle: chart.Style{
+				StrokeColor: chart.ColorAlternateGray,
+				StrokeWidth: 1.0,
+			},
+			GridLines: releases(),
+		},
+		Width:  412,
+		Height: 390,
+		YAxis: chart.YAxis{
+			//Name:      "yvalue",
+			//Style: {chart.StyleShow(),
+			Style: chart.Style{
+				Show: true,
+				//FontSize: 16.0,
+				//StrokeColor: drawing.ColorRed, // will supercede defaults
+				//FillColor:   drawing.ColorRed.WithAlpha(64), // will supercede defaults
+			},
+			//NameStyle: chart.StyleShow(),
+			TickStyle: chart.Style{
+				TextRotationDegrees: 30.0,
+				FontSize:            9.0,
+				//FontColor:       drawing.ColorRed,
+				//TextLineSpacing: 5,
+			},
+			Ticks: []chart.Tick{
+				{Value: 1.0, Label: "1.00"},
+				{Value: 2.0, Label: "2.00"},
+				{Value: 3.0, Label: "3.00"},
+				{Value: 4.0, Label: "4.00"},
+				{Value: 5.0, Label: "5.00"},
+				{Value: 6.0, Label: "6.00"},
+				{Value: 7.0, Label: "7.00"},
+				{Value: 8.0, Label: "8.00"},
+				{Value: 9.0, Label: "9.00"},
+				{Value: 10.0, Label: "10.00"},
+				{Value: 11.0, Label: "11.00"},
+				{Value: 12.0, Label: "12.00"},
+			},
+			GridMajorStyle: chart.Style{
+				StrokeColor:     drawing.ColorRed,
+				StrokeWidth:     0.4,
+				Show:            true,
+				FillColor:       drawing.ColorFromHex("efefef"),
+				StrokeDashArray: []float64{2.0, 7.0},
+			},
+			GridLines: []chart.GridLine{{Value: 6}},
+		},
+		Canvas: chart.Style{
+			//FillColor: drawing.ColorFromHex("efe1ef"),
+		},
+
+		Series: []chart.Series{
+			chart.ContinuousSeries{
+				Style: chart.Style{
+					Show:        true,
+					FontSize:    16.0,
+					StrokeWidth: 1.0,
+					//	StrokeColor: drawing.ColorRed,               // will supercede defaults
+					//	FillColor:   drawing.ColorRed.WithAlpha(64), // will supercede defaults
+				},
+				Name:    "工业指数",
+				XValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
+				YValues: []float64{6.0, 7.0, 10.0, 9.0, 6.0},
+			},
+			chart.ContinuousSeries{
+				Style: chart.Style{
+					Show:            true,
+					StrokeDashArray: []float64{5.0, 4.0},
+					DotWidth:        1.0,
+					DotColor:        drawing.ColorRed,
+					//StrokeColor:     drawing.ColorBlue,               // will supercede defaults
+					//FillColor:       drawing.ColorRed.WithAlpha(164), // will supercede defaults
+				},
+				Name:    "工业指数1",
+				XValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
+				YValues: []float64{2.0, 5.0, 4.0, 10.0, 3.0},
+			},
+		},
+	}
+
+	graph.Elements = []chart.Renderable{
+		chart.Legend(&graph),
+	}
+
+	f, _ := os.Create("output11.png")
+	defer f.Close()
+	graph.Render(chart.PNG, f)
+
+}
+
+func DrawChart1() {
+	//custFont := getCustFont()
+
+	graph := chart.Chart{
+		//		Background: chart.Style{
+		//			FillColor: drawing.ColorBlue,
+		//		},
+		//		Canvas: chart.Style{
+		//			FillColor: drawing.ColorFromHex("efefef"),
+		//		},
+
+		Background: chart.Style{
+			Padding: chart.Box{
+				Top: 50,
+			},
+		},
+
+		YAxis: chart.YAxis{
+			Name:      "hello",
+			NameStyle: chart.StyleShow(),
+			Style:     chart.StyleShow(),
+			GridMajorStyle: chart.Style{
+				StrokeColor:     drawing.ColorRed,
+				StrokeWidth:     0.4,
+				Show:            true,
+				FillColor:       drawing.ColorFromHex("efefef"),
+				StrokeDashArray: []float64{2.0, 7.0},
+			},
+			GridLines: []chart.GridLine{{Value: 2.0}, {Value: 3}, {Value: 4}, {Value: 5}},
+		},
+		XAxis: chart.XAxis{
+			Name:      "hello",
+			NameStyle: chart.StyleShow(),
+			Style:     chart.StyleShow(),
+			//			GridMajorStyle: chart.Style{
+			//				StrokeColor: chart.ColorAlternateGray,
+			//				StrokeWidth: 1.0,
+			//				Show:        true,
+			//			},
+			//			GridLines: []chart.GridLine{{Value: 4.0}},
+		},
+		Series: []chart.Series{
+			chart.ContinuousSeries{
+				XValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
+				YValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
+			},
+
+			chart.ContinuousSeries{
+				XValues: []float64{1.0, 2.0, 3.0, 4.0, 5.0},
+				YValues: []float64{2.0, 4.0, 1.0, 8.0, 7.0},
+			},
+		},
+	}
+
+	//	graph := chart.Chart{
+	//		Font: custFont,
+	//		XAxis: chart.XAxis{
+	//			Name:  "The YAxis",
+	//			Style: chart.StyleShow(),
+	//		},
+	//		Series: []chart.Series{
+	//			chart.ContinuousSeries{
+	//				Style: chart.Style{
+	//					StrokeColor: chart.GetDefaultColor(0).WithAlpha(64),
+	//					FillColor:   chart.GetDefaultColor(0).WithAlpha(64),
+	//				},
+	//				XValues: []float64{2001, 2002, 2003, 2004, 2005},
+	//				YValues: []float64{1.0, 8.0, 3.0, 4.0, 10.0},
+	//			},
+	//		},
+	//	}
+
+	//	graph.Elements = []chart.Renderable{
+	//		chart.LegendThin(&graph),
+	//	}
+
+	f, _ := os.Create("output11.png")
+	defer f.Close()
+	graph.Render(chart.PNG, f)
+
+}
+
+func DrawBarChart(pdf *gofpdf.Fpdf) {
+	//	custFont := getCustFont()
+	profitStyle := chart.Style{
+		FillColor:   drawing.ColorFromHex("13c158"),
+		StrokeColor: drawing.ColorFromHex("13c158"),
+		StrokeWidth: 0,
+	}
+
+	lossStyle := chart.Style{
+		FillColor:   drawing.ColorFromHex("c11313"),
+		StrokeColor: drawing.ColorFromHex("c11313"),
+		StrokeWidth: 0,
+	}
+
+	sbc := chart.BarChart{
+		Title: "Bar Chart Using BaseValue",
+		Background: chart.Style{
+			Padding: chart.Box{
+				Top: 40,
+			},
+		},
+		Height:   512,
+		BarWidth: 60,
+		YAxis: chart.YAxis{
+			Ticks: []chart.Tick{
+				{Value: -4.0, Label: "-4"},
+				{Value: -2.0, Label: "-2"},
+				{Value: 0, Label: "0"},
+				{Value: 2.0, Label: "2"},
+				{Value: 4.0, Label: "4"},
+				{Value: 6.0, Label: "6"},
+				{Value: 8.0, Label: "8"},
+				{Value: 10.0, Label: "10"},
+				{Value: 12.0, Label: "12"},
+			},
+		},
+		Bars: []chart.Value{
+			{Value: 10.0, Style: profitStyle, Label: "Profit"},
+			{Value: 12.0, Style: profitStyle, Label: "More Profit"},
+			{Value: 8.0, Style: profitStyle, Label: "Still Profit"},
+			{Value: -4.0, Style: lossStyle, Label: "Loss!"},
+			{Value: 3.0, Style: profitStyle, Label: "Phew Ok"},
+			{Value: -2.0, Style: lossStyle, Label: "Oh No!"},
+		},
+	}
+	f, _ := os.Create("output11.png")
+	defer f.Close()
+	sbc.Render(chart.PNG, f)
+
+	pdf.Image("./output11.png", 40, 10, 80, 100, true, "", 0, "http://www.crfchina.com")
+
+}
+func DrawPieChart(pdf *gofpdf.Fpdf) {
 	custFont := getCustFont()
 	pie := chart.PieChart{
 		Title:      "信用分布情况",

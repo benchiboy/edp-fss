@@ -4,7 +4,14 @@ import (
 	"testing"
 )
 
-func TestDrawChart(t *testing.T) {
+//func TestDrawSeriesChart(t *testing.T) {
+//	DrawSeriesChart()
+//}
 
-	DrawChart()
+//func TestDrawBarChart(t *testing.T) {
+//	DrawSeriesChart()
+//}
+
+func TestDrawBarChart(t *testing.T) {
+	DrawSeriesChart()
 }

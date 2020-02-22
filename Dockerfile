@@ -1,10 +1,9 @@
-FROM golang:alpine AS development
-WORKDIR $GOPATH/src/edp-fss
-COPY . .
-RUN go build -o edp-fss
 
 FROM alpine:latest AS production
-WORKDIR /root/
-COPY --from=development /go/src/edp-fss .
+WORKDIR /go/src/
+COPY edp-fss .
+COPY NotoSansSC-Regular.ttf .
+COPY config-ci.json .
+
 EXPOSE 8080
-ENTRYPOINT ["nohup ./edp-fss &"]
+CMD [ "/go/src/edp-fss"]
